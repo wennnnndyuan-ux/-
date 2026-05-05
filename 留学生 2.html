@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留学生生活指南 — 英美澳加100所大学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:#faf9f6;color:#0f0f0f;font-size:15px;line-height:1.6}
+:root{
+  --ink:#0f0f0f;--ink2:#374151;--ink3:#6b7280;
+  --paper:#f8faff;--paper2:#eef2ff;--paper3:#dde4f5;
+  --accent:#4f46e5;--accent2:#3730a3;
+  --accent-light:#ede9fe;--accent-mid:#a5b4fc;
+  --gold:#d97706;--gold2:#b45309;--gold-light:#fef3c7;
+  --teal:#0891b2;--teal2:#0e7490;--teal-light:#cffafe;
+  --rose:#e11d48;--rose-light:#ffe4e6;
+  --green:#059669;--green-light:#d1fae5;
+  --r:10px;--r2:16px;
+  --shadow:0 4px 20px rgba(79,70,229,0.08);--shadow2:0 12px 48px rgba(79,70,229,0.15)
+}
+
+/* LANDING */
+#landing{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);position:relative;overflow:hidden}
+.l-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px}
+.l-glow1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.45) 0%,transparent 65%);top:-200px;right:-150px;pointer-events:none}
+.l-glow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,.25) 0%,transparent 65%);bottom:-100px;left:-100px;pointer-events:none}
+.l-inner{position:relative;z-index:1;text-align:center;max-width:680px;width:100%}
+.l-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b8860b;margin-bottom:18px;font-weight:500}
+.l-h1{font-size:clamp(34px,5.5vw,60px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px;letter-spacing:-.5px}
+.l-h1 em{color:#b8860b;font-style:normal}
+.l-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:36px;line-height:1.8;max-width:500px;margin-left:auto;margin-right:auto}
+.s-wrap{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:5px;display:flex;gap:5px;max-width:560px;margin:0 auto 10px}
+.s-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 16px;color:#fff;font-size:14px}
+.s-wrap input::placeholder{color:rgba(255,255,255,.28)}
+.s-go{background:linear-gradient(135deg,#6366f1,#4f46e5);border:none;color:#fff;padding:11px 22px;border-radius:12px;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;transition:.15s}
+.s-go:hover{filter:brightness(1.15)}
+.sb{max-width:560px;margin:0 auto 8px;background:rgba(11,17,32,.97);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;display:none}
+.si{padding:10px 18px;font-size:13px;cursor:pointer;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.05);transition:background .1s;display:flex;align-items:center;gap:10px}
+.si:last-child{border-bottom:none}
+.si:hover{background:rgba(255,255,255,.07)}
+.si-meta{font-size:11px;color:rgba(255,255,255,.3);margin-left:auto}
+.chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;max-width:560px;margin:0 auto;margin-top:12px}
+.chip{padding:5px 13px;border:1px solid rgba(255,255,255,.14);border-radius:20px;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer;transition:.15s}
+.chip:hover{border-color:#a5b4fc;color:#a5b4fc;background:rgba(99,102,241,.1)}
+.err{max-width:560px;margin:6px auto 0;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25);border-radius:var(--r);padding:9px 14px;font-size:12px;color:#fca5a5;display:none;text-align:center}
+.stats{font-size:11px;color:rgba(255,255,255,.25);margin-top:16px;letter-spacing:.04em}
+
+/* GUIDE */
+#guide{display:none;min-height:100vh;background:var(--paper)}
+.gh{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 60%,#1e1b4b 100%);padding:30px 24px 0;position:relative;overflow:hidden}
+.gh-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:40px 40px}
+.gh-glow{position:absolute;width:600px;height:400px;border-radius:50%;background:radial-gradient(ellipse,rgba(29,78,216,.18) 0%,transparent 70%);right:-100px;top:-80px;pointer-events:none}
+.gh-inner{position:relative;z-index:1;max-width:940px;margin:0 auto}
+.back-btn{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.38);font-size:12px;cursor:pointer;margin-bottom:16px;background:none;border:none;transition:.15s}
+.back-btn:hover{color:#a5b4fc}
+.h-flag{font-size:30px;margin-bottom:6px;display:block}
+.h-uni{font-size:clamp(20px,3.5vw,34px);font-weight:700;color:#fff;margin-bottom:4px;line-height:1.2}
+.h-city{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:8px;letter-spacing:.06em}
+.h-intro{font-size:13px;color:rgba(255,255,255,.6);max-width:600px;margin-bottom:22px;line-height:1.7}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:11px 17px;border:none;background:transparent;color:rgba(255,255,255,.38);font-size:13px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:.15s;flex-shrink:0}
+.tab:hover{color:rgba(255,255,255,.75)}
+.tab.on{color:#fff;border-bottom-color:#a5b4fc}
+.gbody{max-width:940px;margin:0 auto;padding:26px 24px;background:var(--paper)}
+.panel{display:none}.panel.on{display:block}
+
+/* CARDS */
+.sec-h{font-size:20px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:9px;letter-spacing:-.3px;color:#1e1b4b;padding-bottom:10px;border-bottom:2px solid var(--paper3)}
+.card{background:#fff;border:1px solid var(--paper3);border-radius:var(--r2);padding:20px;margin-bottom:12px;box-shadow:var(--shadow);transition:box-shadow .2s}.card:hover{box-shadow:var(--shadow2)}
+.card-title{font-weight:600;font-size:14px;margin-bottom:11px}
+.lede{font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:12px;padding:10px 13px;background:var(--paper);border-radius:var(--r);border-left:3px solid #6366f1}
+.rows{display:grid;gap:0}
+.row{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--paper2);font-size:13px;align-items:flex-start}
+.row:last-child{border-bottom:none}
+.rl{color:var(--ink3);min-width:78px;flex-shrink:0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.rv{color:var(--ink);line-height:1.6;flex:1}
+.rv a{color:#6366f1;text-decoration:none;border-bottom:1px solid rgba(99,102,241,.25)}
+.rv a:hover{border-bottom-color:#6366f1}
+.lrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:var(--r);font-size:12px;font-weight:500;text-decoration:none;transition:.15s;border:1px solid;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;border-color:#4338ca}.btn-primary:hover{background:linear-gradient(135deg,#4f46e5,#3730a3)}
+.btn-gold{background:#b8860b;color:#fff;border-color:#a0740a}.btn-gold:hover{background:#a0740a}
+.btn-outline{background:#fff;color:var(--ink);border-color:var(--paper3)}.btn-outline:hover{background:var(--paper)}
+.tip-box{background:#ede9fe;border:1px solid #c4b5fd;border-radius:var(--r);padding:10px 13px;font-size:13px;color:#4c1d95;margin-top:11px;line-height:1.6}
+.warn-box{background:#fef9ec;border:1px solid #fde68a;border-radius:var(--r);padding:10px 13px;font-size:13px;color:#92400e;margin-top:11px;line-height:1.6}
+
+/* STORES */
+.store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin-top:11px}
+.store-card{background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r);padding:13px;transition:.15s}
+.store-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.se{font-size:22px;margin-bottom:6px}
+.sn{font-weight:600;font-size:13px;margin-bottom:2px}
+.st{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.sd{font-size:11px;color:#059669;font-weight:500}
+
+/* RENT AREAS */
+.area-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-top:10px}
+.area-card{background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r);padding:11px}
+.an{font-weight:600;font-size:13px;margin-bottom:3px}
+.ad{font-size:12px;color:var(--ink2);line-height:1.5}
+
+/* PLATFORMS */
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:8px;margin-top:9px}
+.plat-card{background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r);padding:10px}
+.plat-card a{font-weight:600;font-size:13px;color:#6366f1;text-decoration:none}
+.plat-card p{font-size:11px;color:var(--ink3);margin-top:3px}
+
+/* BANK ITEMS */
+.bank-item{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--paper2);align-items:flex-start}
+.bank-item:last-child{border-bottom:none}
+.bank-info{flex:1}
+.bank-name{font-weight:600;font-size:13px;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bank-desc{font-size:12px;color:var(--ink2)}
+.badge{display:inline-block;padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600}
+.badge-blue{background:#dbeafe;color:#1e40af}
+.badge-green{background:#d1fae5;color:#065f46}
+.badge-gold{background:#fef3c7;color:#92400e}
+
+/* EXPLORE */
+.exhero{border-radius:var(--r2);height:150px;display:flex;align-items:flex-end;padding:18px 20px;margin-bottom:16px;position:relative;overflow:hidden;background:linear-gradient(135deg,#1e1b4b,#4f46e5,#7c3aed)}
+.exhero-em{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:72px;opacity:.16}
+.exhero-text{position:relative;z-index:1;color:#fff}
+.exhero-text h3{font-size:19px;font-weight:700;margin-bottom:3px}
+.exhero-text p{font-size:12px;color:rgba(255,255,255,.55)}
+.places-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:12px;margin-bottom:20px}
+.pcard{background:#fff;border:1px solid var(--paper3);border-radius:var(--r2);overflow:hidden;box-shadow:var(--shadow);transition:.2s}
+.pcard:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
+.pcard-img{height:95px;display:flex;align-items:center;justify-content:center;font-size:40px}
+.pcard-body{padding:12px}
+.pcard-name{font-weight:600;font-size:13px;margin-bottom:3px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.pcard-type{font-size:11px;color:var(--ink3);margin-bottom:5px}
+.pcard-desc{font-size:12px;color:var(--ink2);line-height:1.5;margin-bottom:8px}
+.pcard-links{display:flex;gap:5px;flex-wrap:wrap}
+.plink{font-size:11px;padding:3px 8px;border-radius:6px;text-decoration:none;font-weight:500}
+.pl-map{background:#dbeafe;color:#1e40af}.pl-map:hover{background:#bfdbfe}
+.pl-web{background:#d1fae5;color:#065f46}.pl-web:hover{background:#a7f3d0}
+.fbadge{background:#dcfce7;color:#166534;font-size:10px;padding:2px 6px;border-radius:5px;font-weight:700;letter-spacing:.02em}
+.pbadge{background:#fef9c3;color:#854d0e;font-size:10px;padding:2px 6px;border-radius:5px;font-weight:700}
+.sec-label{font-size:13px;font-weight:600;margin:20px 0 11px;color:var(--ink)}
+.dtcard{background:#fff;border:1px solid var(--paper3);border-radius:var(--r2);padding:17px;margin-bottom:11px;box-shadow:var(--shadow);display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}
+.dtnum{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dt-dest{font-size:16px;font-weight:700;margin-bottom:3px}
+.dt-how{font-size:12px;color:#1d4ed8;font-weight:500;margin-bottom:6px}
+.dt-why{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.dt-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.dt-tag{background:var(--paper);border:1px solid var(--paper3);border-radius:5px;font-size:11px;padding:3px 7px;color:var(--ink2)}
+.dt-links{display:flex;gap:6px;flex-wrap:wrap}
+.souv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:8px;margin-top:11px}
+.souv-card{background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r);padding:11px;text-align:center}
+.souv-em{font-size:24px;margin-bottom:5px}
+.souv-n{font-size:12px;font-weight:600;margin-bottom:2px}
+.souv-d{font-size:11px;color:var(--ink3);line-height:1.4}
+
+/* CHECKLIST */
+.cl-head{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:4px}
+.cl-bar-o{background:var(--paper2);border-radius:4px;height:5px;overflow:hidden;margin-bottom:13px}
+.cl-bar-i{background:linear-gradient(90deg,#6366f1,#ec4899);height:100%;border-radius:4px;transition:width .4s}
+.cl-phase-h{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--paper3)}
+.cli{display:flex;align-items:flex-start;gap:9px;padding:6px 7px;border-radius:var(--r);cursor:pointer;transition:background .1s;font-size:13px}
+.cli:hover{background:var(--paper)}
+.cli input{margin-top:2px;cursor:pointer;accent-color:#1d4ed8;flex-shrink:0;width:14px;height:14px}
+.cli label{cursor:pointer;line-height:1.5;flex:1}
+.cli.done{opacity:.6}
+.cli.done label{text-decoration:line-through;color:var(--ink3)}
+
+/* AI CHAT */
+.chatbox{background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r2);padding:12px;min-height:90px;max-height:230px;overflow-y:auto;margin-bottom:10px;font-size:13px;line-height:1.6}
+.mu{text-align:right;margin-bottom:7px}
+.mu span{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 11px;border-radius:13px 13px 3px 13px;display:inline-block;max-width:86%;font-size:13px}
+.ma{margin-bottom:7px}
+.ma span{background:#fff;border:1px solid var(--paper3);padding:6px 11px;border-radius:3px 13px 13px 13px;display:inline-block;max-width:93%;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.thinking{color:var(--ink3);font-style:italic}
+.qq-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.qq{padding:5px 10px;background:#fff;border:1px solid var(--paper3);border-radius:11px;font-size:12px;cursor:pointer;color:var(--ink2);transition:.12s;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.qq:hover{border-color:#6366f1;color:#4f46e5;background:#ede9fe}
+.ai-row{display:flex;gap:7px}
+.ai-row input{flex:1;padding:9px 12px;border:1px solid var(--paper3);border-radius:var(--r);font-size:13px;background:#fff;color:var(--ink);outline:none;transition:.15s}
+.ai-row input:focus{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.15)}
+.ai-send{padding:9px 16px;background:linear-gradient(135deg,#6366f1,#4f46e5);border:none;color:#fff;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer}
+.ai-send:hover{opacity:.9}
+.ai-send:disabled{opacity:.45;cursor:not-allowed}
+.ai-info{font-size:11px;color:var(--ink3);margin-top:8px;line-height:1.5;padding:8px 10px;background:var(--paper);border-radius:var(--r)}
+
+@media(max-width:600px){
+  .places-grid{grid-template-columns:1fr}
+  .dtcard{grid-template-columns:1fr}
+  .dtnum{display:none}
+  .gbody{padding:16px 14px}
+  .gh{padding:20px 14px 0}
+}
+</style>
+</head>
+<body>
+
+<div id="landing">
+  <div class="l-grid"></div>
+  <div class="l-glow1"></div>
+  <div class="l-glow2"></div>
+  <div class="l-inner">
+    <div class="l-tag">Student Life Guide · 英美澳加留学生活指南</div>
+    <h1 class="l-h1">探索你的<br><em>留学城市</em></h1>
+    <p class="l-sub">输入大学名称，获取该城市专属的交通、租房、超市、周边景点、一日游攻略及购票链接</p>
+    <div class="s-wrap">
+      <input id="si" placeholder="输入大学名（中英文均可），例：西澳大学、McGill、UNSW..." oninput="onInp()" onkeydown="onKey(event)" autocomplete="off"/>
+      <button class="s-go" onclick="doSearch()">查看指南 →</button>
+    </div>
+    <div class="sb" id="sb"></div>
+    <div class="err" id="err">未找到该大学，请尝试英文名或其他写法</div>
+    <div class="chips">
+      <span class="chip" onclick="qs('牛津')">🇬🇧 牛津</span>
+<span class="chip" onclick="qs('剑桥')">🇬🇧 剑桥</span>
+<span class="chip" onclick="qs('帝国理工')">🇬🇧 帝国理工</span>
+<span class="chip" onclick="qs('爱丁堡')">🇬🇧 爱丁堡</span>
+<span class="chip" onclick="qs('曼彻斯特')">🇬🇧 曼彻斯特</span>
+<span class="chip" onclick="qs('MIT')">🇺🇸 MIT</span>
+<span class="chip" onclick="qs('哈佛')">🇺🇸 哈佛</span>
+<span class="chip" onclick="qs('哥伦比亚')">🇺🇸 哥伦比亚</span>
+<span class="chip" onclick="qs('UCLA')">🇺🇸 UCLA</span>
+<span class="chip" onclick="qs('斯坦福')">🇺🇸 斯坦福</span>
+<span class="chip" onclick="qs('墨尔本')">🇦🇺 墨尔本</span>
+<span class="chip" onclick="qs('悉尼')">🇦🇺 悉尼</span>
+<span class="chip" onclick="qs('UNSW')">🇦🇺 UNSW</span>
+<span class="chip" onclick="qs('ANU')">🇦🇺 ANU</span>
+<span class="chip" onclick="qs('昆士兰')">🇦🇺 昆士兰</span>
+<span class="chip" onclick="qs('多伦多')">🇨🇦 多伦多</span>
+<span class="chip" onclick="qs('UBC')">🇨🇦 UBC</span>
+<span class="chip" onclick="qs('麦吉尔')">🇨🇦 麦吉尔</span>
+<span class="chip" onclick="qs('滑铁卢')">🇨🇦 滑铁卢</span>
+<span class="chip" onclick="qs('阿尔伯塔')">🇨🇦 阿尔伯塔</span>
+
+    </div>
+    
+    <div style="margin-top:32px;width:100%;max-width:680px;margin-left:auto;margin-right:auto">
+      <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(165,180,252,.7);margin-bottom:14px;text-align:center">📖 留学必读 · 热门攻略</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
+        <a href="https://zhuanlan.zhihu.com/p/646843677" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">🇬🇧 英国留学</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">英国硕士留学申请全流程解析</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 万字长文</div>
+        </a>
+        <a href="https://zhuanlan.zhihu.com/p/653393118" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">🏠 租房 · 银行</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">英国留学注意事项大全（银行+租房）</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 真实经验</div>
+        </a>
+        <a href="https://zhuanlan.zhihu.com/p/493833545" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">🏠 租房攻略</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">英国留学租房攻略（2024最新版）</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 详细指南</div>
+        </a>
+        <a href="https://zhuanlan.zhihu.com/p/35845960" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">⚠️ 避坑指南</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">英国租房血泪史：中介坑、押金坑全踩过</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 真实踩坑</div>
+        </a>
+        <a href="https://zhuanlan.zhihu.com/p/680145157" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">📋 综合指南</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">2024-2025英国留学终极指南</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 最新版本</div>
+        </a>
+        <a href="https://www.zhihu.com/question/24618051" target="_blank" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;text-decoration:none;transition:all .15s;display:block" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+          <div style="font-size:11px;color:rgba(165,180,252,.7);margin-bottom:6px">💬 真实体验</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px">在英国留学是种怎样的体验？（千人回答）</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4)">知乎 · 高赞问答</div>
+        </a>
+      </div>
+    </div>
+<div class="stats" style="margin-top:20px">收录英🇬🇧40所 · 美🇺🇸25所 · 澳🇦🇺20所 · 加🇨🇦15所 · 共100所大学</div>
+  </div>
+</div>
+
+<div id="guide">
+  <div class="gh">
+    <div class="gh-grid"></div>
+    <div class="gh-glow"></div>
+    <div class="gh-inner">
+      <button class="back-btn" onclick="goBack()">← 换一所大学</button>
+      <span class="h-flag" id="hflag"></span>
+      <div class="h-uni" id="huni"></div>
+      <div class="h-city" id="hcity"></div>
+      <div class="h-intro" id="hintro"></div><div id="h-articles" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px"></div>
+      <div class="tabs">
+        <button class="tab on" onclick="st('t',this)">🚌 交通出行</button>
+        <button class="tab" onclick="st('s',this)">🛒 超市购物</button>
+        <button class="tab" onclick="st('r',this)">🏠 租房指南</button>
+        <button class="tab" onclick="st('b',this)">🏦 银行开户</button>
+        <button class="tab" onclick="st('e',this)">🗺 周边探索</button>
+        <button class="tab" onclick="st('cl',this)">✅ 出发清单</button>
+        <button class="tab" onclick="st('ai',this)">💬 AI 问答</button>
+      </div>
+    </div>
+  </div>
+  <div class="gbody">
+    <div id="p-t" class="panel on"></div>
+    <div id="p-s" class="panel"></div>
+    <div id="p-r" class="panel"></div>
+    <div id="p-b" class="panel"></div>
+    <div id="p-e" class="panel"></div>
+    <div id="p-cl" class="panel"></div>
+    <div id="p-ai" class="panel"></div>
+  </div>
+</div>
+
+<script>
+const DB = {"oxford": {"zh": "牛津大学", "en": "University of Oxford", "city": "牛津", "cityEn": "Oxford", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "全球排名第一，历史逾900年，学院制，哈利波特取景地。", "rent_price": "£700-1100/月", "transport_info": "Stagecoach公交，骑行为主", "supermarket_info": "Sainsbury's/Aldi市区均有", "area_info": "Jericho/Cowley Road区，步行/骑行5-20分钟", "daytrip_info": "伦敦1h、科茨沃尔德1h、斯特拉特福1h", "explore_info": "基督堂学院、博德利图书馆、阿什莫林博物馆(免费)"}, "cambridge": {"zh": "剑桥大学", "en": "University of Cambridge", "city": "剑桥", "cityEn": "Cambridge", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "世界顶尖，康河撑篙标志体验，骑行之城，数学桥必游。", "rent_price": "£650-950/月", "transport_info": "骑行为主，火车到伦敦50分钟", "supermarket_info": "Sainsbury's/Aldi均有", "area_info": "Romsey Town/Mill Road，骑行5-15分钟", "daytrip_info": "伦敦50min、伊利20min、诺里奇1h", "explore_info": "国王学院礼拜堂、菲茨威廉博物馆(免费)、康河撑篙"}, "imperial": {"zh": "帝国理工学院", "en": "Imperial College London", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "全球顶尖理工，南肯辛顿，三大免费博物馆为邻，科技氛围。", "rent_price": "£900-1400/月", "transport_info": "地铁South Kensington站，Zone 1", "supermarket_info": "多家超市步行可达，唐人街15分钟", "area_info": "Earl's Court/Hammersmith，Zone 2", "daytrip_info": "布莱顿1h、温莎40min、牛津1h", "explore_info": "自然史博物馆(免费)、V&A(免费)、科学博物馆(免费)"}, "lse": {"zh": "伦敦政治经济学院", "en": "London School of Economics", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "全球顶尖社科，Holborn市中心，政商精英摇篮，地铁步行5分钟。", "rent_price": "£950-1500/月", "transport_info": "地铁Holborn站步行5分钟", "supermarket_info": "大英博物馆旁多家超市", "area_info": "Islington/Hackney，Zone 2", "daytrip_info": "剑桥50min、布莱顿1h、布里斯托1.5h", "explore_info": "大英博物馆(免费，步行5分钟)、Covent Garden"}, "kcl": {"zh": "伦敦国王学院", "en": "King's College London", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国历史最悠久之一，Strand校区泰晤士河畔，多校区分布伦敦。", "rent_price": "£900-1400/月", "transport_info": "地铁Temple/Waterloo站", "supermarket_info": "Strand附近多家超市，Borough Market步行", "area_info": "Southwark/Bermondsey，Zone 1-2", "daytrip_info": "布莱顿1h、牛津1h、温莎40min", "explore_info": "泰特现代(免费)、南岸步行道、Borough Market"}, "ucl": {"zh": "伦敦大学学院", "en": "University College London", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖大学，布卢姆斯伯里，大英博物馆步行5分钟，国际氛围最浓。", "rent_price": "£900-1400/月", "transport_info": "地铁Euston/Russell Square站", "supermarket_info": "Sainsbury's/Tesco步行5分钟，唐人街15分钟", "area_info": "Camden/Islington/Hackney，Zone 2", "daytrip_info": "剑桥50min、牛津1h、布莱顿1h", "explore_info": "大英博物馆(免费)、国家美术馆(免费)、唐人街"}, "edinburgh": {"zh": "爱丁堡大学", "en": "University of Edinburgh", "city": "爱丁堡", "cityEn": "Edinburgh", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "苏格兰最顶尖，城堡脚下，古典建筑与现代学术融合，生活费相对低。", "rent_price": "£550-850/月", "transport_info": "Lothian Buses全市，学生月票£55", "supermarket_info": "Tesco/Sainsbury's/Lidl市区均有", "area_info": "Marchmont/Newington，步行15-25分钟", "daytrip_info": "格拉斯哥50min、苏格兰高地2h、圣安德鲁斯1h", "explore_info": "爱丁堡城堡、Arthur's Seat、Royal Mile"}, "glasgow": {"zh": "格拉斯哥大学", "en": "University of Glasgow", "city": "格拉斯哥", "cityEn": "Glasgow", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "苏格兰最古老大学之一，哥特建筑壮观，艺术设计强，生活费全英最低。", "rent_price": "£450-700/月", "transport_info": "地铁+公交，学生卡优惠", "supermarket_info": "Aldi/Lidl/Tesco市区均有", "area_info": "West End/Hillhead，步行5-15分钟", "daytrip_info": "爱丁堡50min、洛蒙德湖45min、高地日游", "explore_info": "Kelvingrove艺术博物馆(免费)、Glasgow Cathedral"}, "bristol": {"zh": "布里斯托大学", "en": "University of Bristol", "city": "布里斯托", "cityEn": "Bristol", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国最受欢迎大学之一，全球最酷城市，班克西壁画，悬索桥，音乐场景。", "rent_price": "£600-900/月", "transport_info": "First Bristol公交，骑行方便", "supermarket_info": "Clifton村Sainsbury's，Stokes Croft有亚洲超市", "area_info": "Clifton/Redland，步行15-25分钟", "daytrip_info": "巴斯12min、卡迪夫1h、埃克塞特1h", "explore_info": "克利夫顿悬索桥(免费)、卡兹沿河区"}, "manchester": {"zh": "曼彻斯特大学", "en": "University of Manchester", "city": "曼彻斯特", "cityEn": "Manchester", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖大学，英格兰北部最大城市，华人超市最发达，全英第二唐人街。", "rent_price": "£500-750/月", "transport_info": "Metrolink轻轨+公交，学生月票£50-70", "supermarket_info": "唐人街中国超市最全，Aldi/Lidl多处", "area_info": "Fallowfield/Rusholme，公交15-20分钟", "daytrip_info": "利物浦45min、湖区1.5h、约克1h", "explore_info": "曼城唐人街(全英第二大)、科学工业博物馆(免费)"}, "warwick": {"zh": "华威大学", "en": "University of Warwick", "city": "考文垂", "cityEn": "Coventry", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，校园宽阔，2021欧洲文化之都，华威古堡近在咫尺。", "rent_price": "£400-600/月", "transport_info": "NX公交，学生学期票£80-100", "supermarket_info": "Cannon Park有Tesco Extra，Aldi在附近", "area_info": "Cannon Park/Earlsdon，步行10-25分钟", "daytrip_info": "伯明翰20min、华威古堡20min、牛津1h", "explore_info": "考文垂大教堂(免费)、交通博物馆(免费)"}, "lancaster": {"zh": "兰卡斯特大学", "en": "University of Lancaster", "city": "兰卡斯特", "cityEn": "Lancaster", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，风景如画校园，湖区门户，全英生活费最低之一。", "rent_price": "£350-550/月", "transport_info": "Stagecoach公交，骑行最方便", "supermarket_info": "Aldi/Lidl/Booths市区均有", "area_info": "Bowerham/Greaves，步行/骑行10-15分钟", "daytrip_info": "湖区35min、曼彻斯特1h、约克1.5h", "explore_info": "兰卡斯特城堡、Williamson Park(免费)、Morecambe Bay"}, "exeter": {"zh": "埃克塞特大学", "en": "University of Exeter", "city": "埃克塞特", "cityEn": "Exeter", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖大学，德文郡西南，气候温和，达特穆尔荒野门户，海岸风光。", "rent_price": "£500-700/月", "transport_info": "Stagecoach公交，骑行方便", "supermarket_info": "Tesco/Aldi/Lidl均有，有Oriental Supermarket", "area_info": "St James/Heavitree，步行15-25分钟", "daytrip_info": "达特穆尔30min、托基30min、布里斯托1h", "explore_info": "埃克塞特大教堂、RAMM博物馆(免费)"}, "bath": {"zh": "巴斯大学", "en": "University of Bath", "city": "巴斯", "cityEn": "Bath", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖，世界遗产城市，工程商科体育著称，罗马浴场举世闻名。", "rent_price": "£550-750/月", "transport_info": "First Bath公交U18路，校园在山上！", "supermarket_info": "Tesco/Lidl市区均有，有亚洲超市", "area_info": "Oldfield Park/Bear Flat，公交10-15分钟", "daytrip_info": "布里斯托12min、巨石阵45min、科茨沃尔德1h", "explore_info": "罗马浴场、皇家新月楼(外部免费)"}, "york": {"zh": "约克大学", "en": "University of York", "city": "约克", "cityEn": "York", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖大学，中世纪古城，哈利波特取景地Shambles街，城墙漫步必去。", "rent_price": "£450-650/月", "transport_info": "First York公交，骑行文化盛行", "supermarket_info": "Tesco/Aldi市区均有", "area_info": "Heslington村/Fulford，步行/骑行15-20分钟", "daytrip_info": "里兹25min、哈罗盖特20min、斯卡布罗45min", "explore_info": "约克大教堂、The Shambles(免费)、约克城墙(免费)"}, "uea": {"zh": "东安格利亚大学", "en": "University of East Anglia", "city": "诺里奇", "cityEn": "Norwich", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国著名研究型，创意艺术强校，诺里奇历史名城，全英生活费最低。", "rent_price": "£400-550/月", "transport_info": "First Norfolk公交，骑行平坦", "supermarket_info": "校内Tesco，市区Aldi/Lidl", "area_info": "Golden Triangle，步行20-25分钟", "daytrip_info": "剑桥1h、克罗默海边45min", "explore_info": "诺里奇大教堂(免费)、The Lanes购物街"}, "sheffield": {"zh": "谢菲尔德大学", "en": "University of Sheffield", "city": "谢菲尔德", "cityEn": "Sheffield", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国学生满意度最高之一，Ecclesall Road学生区热闹，生活费低廉。", "rent_price": "£400-600/月", "transport_info": "Supertram轻轨+公交，学生票£55/学期", "supermarket_info": "Aldi/Lidl/Tesco学生区均有", "area_info": "Ecclesall Road/Crookes，步行/公交10-20分钟", "daytrip_info": "利兹30min、Peak District30min、曼彻斯特1h", "explore_info": "Peak District国家公园、Kelham Island博物馆(免费)"}, "leeds": {"zh": "利兹大学", "en": "University of Leeds", "city": "利兹", "cityEn": "Leeds", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国最大大学之一，时尚购物之都，Headingley学生区活跃，交通便利。", "rent_price": "£450-700/月", "transport_info": "Arriva公交，学生月票约£60", "supermarket_info": "Aldi/Lidl/Tesco学生区均有", "area_info": "Headingley/Hyde Park，步行/公交15-25分钟", "daytrip_info": "曼彻斯特1h、约克25min、谢菲尔德30min", "explore_info": "利兹市区购物、Royal Armouries博物馆(免费)"}, "birmingham": {"zh": "伯明翰大学", "en": "University of Birmingham", "city": "伯明翰", "cityEn": "Birmingham", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖，全英第二大城市，华人文化发达，Wing Yip中国超市，交通枢纽。", "rent_price": "£450-700/月", "transport_info": "地铁+公交，学生票优惠", "supermarket_info": "Wing Yip中国超市，Aldi/Lidl多处", "area_info": "Selly Oak/Bournbrook，步行/公交10-20分钟", "daytrip_info": "考文垂20min、牛津1h、伦敦1.5h", "explore_info": "Cadbury World巧克力工厂、Birmingham Museum(免费)"}, "southampton": {"zh": "南安普顿大学", "en": "University of Southampton", "city": "南安普顿", "cityEn": "Southampton", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，英格兰南海岸，靠近新森林国家公园，轮渡可达法国。", "rent_price": "£500-750/月", "transport_info": "First Hants公交", "supermarket_info": "Tesco/Aldi/Lidl均有", "area_info": "Portswood/Highfield，步行15-25分钟", "daytrip_info": "新森林国家公园30min、温彻斯特20min、朴次茅斯30min", "explore_info": "新森林国家公园、玛丽罗斯博物馆"}, "nottingham": {"zh": "诺丁汉大学", "en": "University of Nottingham", "city": "诺丁汉", "cityEn": "Nottingham", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖大学，美丽的校园湖景，罗宾汉故乡，生活费适中。", "rent_price": "£450-650/月", "transport_info": "NET轻轨+公交", "supermarket_info": "Aldi/Lidl/Tesco均有", "area_info": "Lenton/Beeston，步行/公交15-25分钟", "daytrip_info": "利兹1h、谢菲尔德30min、伯明翰1h", "explore_info": "诺丁汉城堡、美因广场Robin Hood雕像"}, "leicester": {"zh": "莱斯特大学", "en": "University of Leicester", "city": "莱斯特", "cityEn": "Leicester", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国著名研究型大学，多元文化城市，理查三世考古发现地，生活费低。", "rent_price": "£400-600/月", "transport_info": "First Leicester公交", "supermarket_info": "Aldi/Lidl/Tesco均有", "area_info": "Clarendon Park/Stoneygate，步行20-30分钟", "daytrip_info": "诺丁汉30min、考文垂30min", "explore_info": "理查三世博物馆、Leicester Cathedral"}, "loughborough": {"zh": "拉夫堡大学", "en": "Loughborough University", "city": "拉夫堡", "cityEn": "Loughborough", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国体育最强大学，优美校园，理工科强，国际学生众多，小城温馨。", "rent_price": "£400-580/月", "transport_info": "Kinchbus公交", "supermarket_info": "Tesco/Morrisons市区均有", "area_info": "校园宿舍/市区步行20分钟", "daytrip_info": "诺丁汉30min、莱斯特20min", "explore_info": "校园体育设施、Loughborough Bell Foundry"}, "cardiff": {"zh": "卡迪夫大学", "en": "Cardiff University", "city": "卡迪夫", "cityEn": "Cardiff", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "威尔士首都，英国顶尖研究型，威尔士语文化独特，生活费低，海滩近。", "rent_price": "£450-650/月", "transport_info": "Cardiff Bus+火车", "supermarket_info": "Tesco/Aldi/Lidl均有", "area_info": "Cathays/Roath，步行10-20分钟", "daytrip_info": "布里斯托1h、Brecon Beacons1h", "explore_info": "卡迪夫城堡、国家博物馆(免费)"}, "durham": {"zh": "杜伦大学", "en": "Durham University", "city": "杜伦", "cityEn": "Durham", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国第三古老大学，学院制，中世纪大教堂和城堡世界遗产，风景壮观。", "rent_price": "£450-700/月", "transport_info": "Arriva公交，步行为主", "supermarket_info": "Tesco/Sainsbury's/Aldi均有", "area_info": "学院宿舍/市区步行10-20分钟", "daytrip_info": "纽卡斯尔20min、约克1h", "explore_info": "杜伦大教堂(世界遗产)、杜伦城堡"}, "newcastle": {"zh": "纽卡斯尔大学", "en": "Newcastle University", "city": "纽卡斯尔", "cityEn": "Newcastle", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，泰恩河畔，夜生活最活跃城市之一，Geordie文化独特。", "rent_price": "£450-700/月", "transport_info": "地铁Metro+公交，学生票优惠", "supermarket_info": "Eldon Square大型购物中心，Aldi/Tesco均有", "area_info": "Jesmond/Heaton，地铁/步行15-20分钟", "daytrip_info": "杜伦20min、爱丁堡1.5h", "explore_info": "泰恩桥、Baltic艺术中心(免费)"}, "liverpool": {"zh": "利物浦大学", "en": "University of Liverpool", "city": "利物浦", "cityEn": "Liverpool", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，披头士故乡，码头仓库区世界遗产，足球文化盛行。", "rent_price": "£450-650/月", "transport_info": "Merseytravel公交+地铁", "supermarket_info": "Aldi/Lidl/Tesco均有", "area_info": "Kensington/Wavertree，步行/公交15-25分钟", "daytrip_info": "曼彻斯特45min", "explore_info": "Albert Dock(免费)、披头士博物馆"}, "reading": {"zh": "雷丁大学", "en": "University of Reading", "city": "雷丁", "cityEn": "Reading", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，靠近伦敦仅30分钟，农业气象强校，生活费适中。", "rent_price": "£600-900/月", "transport_info": "First Berkshire公交", "supermarket_info": "Tesco/Aldi/Sainsbury's均有", "area_info": "Earley/Whitley，公交15-20分钟", "daytrip_info": "伦敦30min、牛津30min、巴斯1h", "explore_info": "Forbury Gardens(免费)、Reading Museum(免费)"}, "surrey": {"zh": "萨里大学", "en": "University of Surrey", "city": "吉尔福德", "cityEn": "Guildford", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国顶尖研究型，工程酒店旅游强，吉尔福德是英国生活质量最高城市之一。", "rent_price": "£700-1000/月", "transport_info": "Arriva公交，火车到伦敦30分钟", "supermarket_info": "Tesco/Sainsbury's/Aldi均有", "area_info": "市区步行20-30分钟", "daytrip_info": "伦敦30min、南唐斯国家公园20min", "explore_info": "吉尔福德城堡(免费)、南唐斯国家公园"}, "sussex": {"zh": "苏塞克斯大学", "en": "University of Sussex", "city": "布莱顿", "cityEn": "Brighton", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "位于布莱顿郊外，英国最国际化大学之一，海滩步行20分钟，夜生活活跃。", "rent_price": "£600-900/月", "transport_info": "公交到布莱顿市区15分钟", "supermarket_info": "布莱顿市区超市齐全", "area_info": "市区合租/校内宿舍", "daytrip_info": "伦敦1h、布莱顿市区15min", "explore_info": "布莱顿海滩、Brighton Pier"}, "kent": {"zh": "肯特大学", "en": "University of Kent", "city": "坎特伯雷", "cityEn": "Canterbury", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "位于中世纪圣城坎特伯雷，欧洲大门，去法国2小时，历史文化丰富。", "rent_price": "£500-750/月", "transport_info": "Arriva公交，火车到伦敦1小时", "supermarket_info": "Tesco/Sainsbury's/Aldi均有", "area_info": "市区步行20-30分钟", "daytrip_info": "伦敦1h、多佛尔30min（去法国）", "explore_info": "坎特伯雷大教堂(世界遗产)、市区中世纪城墙"}, "leicester_dm": {"zh": "德蒙福特大学", "en": "De Montfort University", "city": "莱斯特", "cityEn": "Leicester", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国著名应用型大学，创意艺术时尚强校，生活费低廉，多元文化城市。", "rent_price": "£380-550/月", "transport_info": "Leicester公交", "supermarket_info": "Aldi/Lidl/Tesco均有", "area_info": "市区步行10-20分钟", "daytrip_info": "诺丁汉30min、考文垂30min", "explore_info": "Leicester Cathedral、Victoria Park(免费)"}, "brighton": {"zh": "布莱顿大学", "en": "University of Brighton", "city": "布莱顿", "cityEn": "Brighton", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国知名艺术设计大学，就在海边，夜生活活跃，艺术氛围浓厚。", "rent_price": "£600-900/月", "transport_info": "Brighton & Hove公交", "supermarket_info": "多家超市市区可达", "area_info": "Kemptown/North Laine，步行15-25分钟", "daytrip_info": "伦敦1h、坎特伯雷1h", "explore_info": "Brighton Beach、Brighton Pier"}, "hertfordshire": {"zh": "赫特福德大学", "en": "University of Hertfordshire", "city": "哈特菲尔德", "cityEn": "Hatfield", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国应用型大学，航空工程强，靠近伦敦仅20分钟，生活费低于伦敦。", "rent_price": "£600-900/月", "transport_info": "Arriva公交，火车到伦敦20分钟", "supermarket_info": "Tesco/Sainsbury's可达", "area_info": "校园宿舍/哈特菲尔德市区", "daytrip_info": "伦敦20min、剑桥1h", "explore_info": "De Havilland飞机博物馆"}, "middlesex": {"zh": "米德尔塞克斯大学", "en": "Middlesex University", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "伦敦Zone 3，国际学生友好，艺术商科强，生活费低于市中心。", "rent_price": "£700-1100/月", "transport_info": "地铁Hendon Central站", "supermarket_info": "多家超市可达", "area_info": "校园附近合租", "daytrip_info": "伦敦市中心30min地铁", "explore_info": "汉普斯特德希思公园(免费)"}, "westminster": {"zh": "威斯敏斯特大学", "en": "University of Westminster", "city": "伦敦", "cityEn": "London", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "位于伦敦市中心Oxford St旁，时尚媒体强，购物天堂，交通极便利。", "rent_price": "£900-1400/月", "transport_info": "地铁Oxford Circus/Regent's Park站", "supermarket_info": "牛津街多家超市步行可达", "area_info": "Marylebone/Fitzrovia，Zone 1", "daytrip_info": "随时去任何伦敦景点", "explore_info": "牛津街购物、大英博物馆步行15分钟"}, "northumbria": {"zh": "诺森比亚大学", "en": "Northumbria University", "city": "纽卡斯尔", "cityEn": "Newcastle", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国前10应用型大学，设计艺术强，纽卡斯尔夜生活全英第一，活力满满。", "rent_price": "£450-650/月", "transport_info": "Metro+公交", "supermarket_info": "Eldon Square购物中心", "area_info": "城市校区市区步行", "daytrip_info": "爱丁堡1.5h、杜伦20min", "explore_info": "泰恩桥、SAGE音乐厅"}, "coventry": {"zh": "考文垂大学", "en": "Coventry University", "city": "考文垂", "cityEn": "Coventry", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国前15应用型大学，位于市中心，2021欧洲文化之都，生活费全英最低。", "rent_price": "£380-560/月", "transport_info": "NX公交", "supermarket_info": "Tesco/Aldi/Lidl均有", "area_info": "市区步行10-15分钟", "daytrip_info": "伯明翰20min、华威古堡30min", "explore_info": "考文垂大教堂(免费)、交通博物馆(免费)"}, "portsmouth": {"zh": "朴次茅斯大学", "en": "University of Portsmouth", "city": "朴次茅斯", "cityEn": "Portsmouth", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国著名海港城市，皇家海军历史，靠近南唐斯，法国日游轮渡可达。", "rent_price": "£500-750/月", "transport_info": "First Hampshire公交", "supermarket_info": "Tesco/Aldi/Lidl均有", "area_info": "市区步行15-25分钟", "daytrip_info": "南安普顿30min、怀特岛轮渡30min", "explore_info": "玛丽罗斯博物馆、Spinnaker塔"}, "hull": {"zh": "赫尔大学", "en": "University of Hull", "city": "赫尔", "cityEn": "Hull", "country": "英国", "cc": "uk", "flag": "🇬🇧", "intro": "英国著名研究型大学，生活费极低，英国2017文化之都，工业转型成功。", "rent_price": "£350-500/月", "transport_info": "Stagecoach公交", "supermarket_info": "Aldi/Lidl/Tesco均有", "area_info": "市区步行10-20分钟", "daytrip_info": "约克45min、利兹1h", "explore_info": "Hull Maritime博物馆(免费)、The Deep水族馆"}, "mit": {"zh": "麻省理工学院", "en": "Massachusetts Institute of Technology", "city": "剑桥（波士顿）", "cityEn": "Cambridge MA", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球最顶尖理工院校，查尔斯河畔，创新创业圣地，波士顿都市圈。", "rent_price": "$1200-2000/月", "transport_info": "地铁Red Line Kendall/MIT站", "supermarket_info": "Star Market/Whole Foods/H-Mart（韩国超市）均可达", "area_info": "Cambridge/Somerville，地铁15-20分钟", "daytrip_info": "纽约4.5h巴士、波士顿市区30min、哈佛大学步行30min", "explore_info": "Harvard Square、MIT博物馆、波士顿Freedom Trail"}, "harvard": {"zh": "哈佛大学", "en": "Harvard University", "city": "波士顿", "cityEn": "Boston", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "世界最著名大学，历史最悠久，查尔斯河畔，Harvard Square文化氛围浓厚。", "rent_price": "$1200-2000/月", "transport_info": "地铁Red Line Harvard站", "supermarket_info": "多家超市Trader Joe's/Whole Foods/H-Mart", "area_info": "Cambridge/Somerville，地铁10-20分钟", "daytrip_info": "纽约4h、波士顿市区30min", "explore_info": "哈佛自然史博物馆(免费)、Harvard Square、波士顿美术馆"}, "stanford": {"zh": "斯坦福大学", "en": "Stanford University", "city": "帕洛阿尔托", "cityEn": "Palo Alto", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球最顶尖大学之一，硅谷中心，创业圣地，校园如公园，骑行必备。", "rent_price": "$2000-3500/月", "transport_info": "Caltrain/公交，需要骑车，无地铁", "supermarket_info": "Trader Joe's/Whole Foods/99 Ranch（亚洲超市）", "area_info": "校园附近/Palo Alto市区", "daytrip_info": "旧金山30min Caltrain、Napa酒庄1h", "explore_info": "斯坦福纪念教堂(免费)、Cantor艺术馆(免费)"}, "columbia": {"zh": "哥伦比亚大学", "en": "Columbia University", "city": "纽约", "cityEn": "New York", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "位于曼哈顿上西区，全球金融文化中心，纽约无限资源，地铁步行10分钟。", "rent_price": "$1800-3000/月", "transport_info": "地铁1号线116th St站步行5分钟", "supermarket_info": "Whole Foods/Trader Joe's/Aldi均有", "area_info": "Washington Heights/Morningside Heights", "daytrip_info": "中央公园步行10min、下城市区30min地铁", "explore_info": "中央公园(免费)、大都会博物馆、纽约无数景点"}, "nyu": {"zh": "纽约大学", "en": "New York University", "city": "纽约", "cityEn": "New York", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "位于曼哈顿格林威治村，艺术商科法学强，纽约最核心位置，无校园但有全城资源。", "rent_price": "$1800-3000/月", "transport_info": "地铁ACE/BDFM West 4th St站", "supermarket_info": "多家超市步行可达", "area_info": "布鲁克林/皇后区，地铁20-30分钟", "daytrip_info": "任何纽约景点地铁可达", "explore_info": "Washington Square Park、MoMA现代艺术馆、High Line"}, "chicago": {"zh": "芝加哥大学", "en": "University of Chicago", "city": "芝加哥", "cityEn": "Chicago", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖，海德公园，经济学摇篮，诺贝尔奖最多，密歇根湖畔，芝加哥文化。", "rent_price": "$1200-2000/月", "transport_info": "地铁Red Line 55th/56th/57th St站", "supermarket_info": "Whole Foods/Jewel-Osco/H-Mart可达", "area_info": "Hyde Park/Bronzeville，地铁20-30分钟", "daytrip_info": "密歇根湖步行、博物馆园区20min地铁", "explore_info": "芝加哥艺术博物馆(学生免费)、密歇根湖滨"}, "northwestern": {"zh": "西北大学", "en": "Northwestern University", "city": "埃文斯顿", "cityEn": "Evanston", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖，密歇根湖畔，伊利诺伊州，传媒法学强，离芝加哥45分钟。", "rent_price": "$1300-2100/月", "transport_info": "地铁Purple Line到埃文斯顿", "supermarket_info": "Trader Joe's/Whole Foods可达", "area_info": "Evanston市区，步行20-30分钟", "daytrip_info": "芝加哥45min地铁", "explore_info": "密歇根湖畔校园、埃文斯顿市区"}, "ucla": {"zh": "加利福尼亚大学洛杉矶分校", "en": "University of California Los Angeles", "city": "洛杉矶", "cityEn": "Los Angeles", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "加州顶尖公立，好莱坞旁，阳光沙滩，电影艺术强校，洛杉矶无限资源。", "rent_price": "$1500-2800/月", "transport_info": "公交/Uber为主，需要有车", "supermarket_info": "99 Ranch/H-Mart（亚洲超市）可达", "area_info": "Westwood/Santa Monica", "daytrip_info": "圣莫尼卡海滩15min、好莱坞30min、圣地亚哥2h", "explore_info": "盖蒂中心(免费)、UCLA Hammer美术馆(免费)"}, "ucberkeley": {"zh": "加利福尼亚大学伯克利分校", "en": "University of California Berkeley", "city": "伯克利", "cityEn": "Berkeley", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖公立，旧金山湾区，学术自由传统，科技精英摇篮，BART地铁可达。", "rent_price": "$1500-2800/月", "transport_info": "BART地铁Downtown Berkeley站", "supermarket_info": "Trader Joe's/Safeway/亚洲超市均有", "area_info": "Telegraph Ave/South Side，步行10-20分钟", "daytrip_info": "旧金山30min BART、硅谷45min", "explore_info": "Lawrence Hall of Science(免费校园)、旧金山海湾景色"}, "carnegie": {"zh": "卡内基梅隆大学", "en": "Carnegie Mellon University", "city": "匹兹堡", "cityEn": "Pittsburgh", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖计算机科学，匹兹堡科技新星，生活费低，多钢铁工业历史文化。", "rent_price": "$1000-1600/月", "transport_info": "Pittsburgh公交，步行为主", "supermarket_info": "Whole Foods/Giant Eagle/H-Mart均有", "area_info": "Squirrel Hill（华人区！）步行20-30分钟", "daytrip_info": "华盛顿特区4h、纽约6h", "explore_info": "匹兹堡钢桥拍照、卡内基博物馆(学生优惠)"}, "penn": {"zh": "宾夕法尼亚大学", "en": "University of Pennsylvania", "city": "费城", "cityEn": "Philadelphia", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "常青藤名校，沃顿商学院全球最顶尖，费城历史文化深厚，生活费适中。", "rent_price": "$1200-2000/月", "transport_info": "SEPTA地铁/公交", "supermarket_info": "Trader Joe's/Whole Foods/亚洲超市", "area_info": "University City，步行20-30分钟", "daytrip_info": "纽约1.5h、华盛顿特区2h", "explore_info": "费城独立厅(免费)、费城美术馆(落基步阶)"}, "duke": {"zh": "杜克大学", "en": "Duke University", "city": "达勒姆", "cityEn": "Durham NC", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国南方顶尖私立，三角研究园区，医学法学强，北卡罗来纳州气候温和。", "rent_price": "$1000-1500/月", "transport_info": "GoTriangle公交，需要有车", "supermarket_info": "Whole Foods/Trader Joe's/H-Mart均有", "area_info": "Durham/Chapel Hill，开车15-20分钟", "daytrip_info": "教堂山20min、罗利30min", "explore_info": "Duke Chapel(免费)、Sarah P. Duke Gardens(免费)"}, "johns_hopkins": {"zh": "约翰斯·霍普金斯大学", "en": "Johns Hopkins University", "city": "巴尔的摩", "cityEn": "Baltimore", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖医学研究，巴尔的摩内港，科研经费全美第一，距华盛顿40分钟。", "rent_price": "$1100-1800/月", "transport_info": "MTA Light Rail/公交", "supermarket_info": "Whole Foods/Safeway/亚洲超市均有", "area_info": "Charles Village/Hampden，步行20-30分钟", "daytrip_info": "华盛顿特区40min、费城1.5h", "explore_info": "内港(免费漫步)、Walter Art Museum(免费)"}, "vanderbilt": {"zh": "范德比尔特大学", "en": "Vanderbilt University", "city": "纳什维尔", "cityEn": "Nashville", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖私立，纳什维尔是全美成长最快城市，Country Music之都，夜生活丰富。", "rent_price": "$1100-1800/月", "transport_info": "WeGo公交，Uber方便", "supermarket_info": "Whole Foods/Publix/H-Mart均有", "area_info": "The Gulch/Midtown，步行/Uber20分钟", "daytrip_info": "孟菲斯3h（猫王故乡）、查塔努加1.5h", "explore_info": "百老汇街Country Music(免费)、Centennial Park帕提农神庙(免费)"}, "cornell": {"zh": "康奈尔大学", "en": "Cornell University", "city": "伊萨卡", "cityEn": "Ithaca", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "常青藤，纽约州，峡谷瀑布美景，农业工程强，小城安静，纽约市4.5小时。", "rent_price": "$1000-1500/月", "transport_info": "TCAT公交，校园有免费巴士", "supermarket_info": "Wegmans（超市神话）/Aldi/亚洲超市", "area_info": "市区步行20-30分钟", "daytrip_info": "纽约市4.5h、尼亚加拉大瀑布3h", "explore_info": "Gorges State Park(免费)、康奈尔植物园(免费)"}, "dartmouth": {"zh": "达特茅斯学院", "en": "Dartmouth College", "city": "汉诺威", "cityEn": "Hanover NH", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "常青藤，新罕布什尔州小镇，户外运动天堂，校园美丽，冬天滑雪，社区感强。", "rent_price": "$1100-1600/月", "transport_info": "Dartmouth Coach巴士到波士顿", "supermarket_info": "市区Hannaford/Co-op超市", "area_info": "市区步行15-20分钟", "daytrip_info": "波士顿2.5h、White Mountains30min", "explore_info": "白山国家森林(免费)、Dartmouth校园美景"}, "georgetown": {"zh": "乔治城大学", "en": "Georgetown University", "city": "华盛顿特区", "cityEn": "Washington DC", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "政治外交法学最强，位于美国首都，政府机构实习机会多，街区历史悠久。", "rent_price": "$1500-2500/月", "transport_info": "地铁Blue/Orange/Silver线Foggy Bottom站", "supermarket_info": "Whole Foods/Safeway/亚洲超市均有", "area_info": "Georgetown/Dupont Circle，步行30-40分钟", "daytrip_info": "任何DC景点地铁可达", "explore_info": "国会山(免费)、史密森尼博物馆群(全部免费)"}, "purdue": {"zh": "普渡大学", "en": "Purdue University", "city": "西拉法叶", "cityEn": "West Lafayette", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖工程，印第安纳州，宇航员最多，生活费极低，华人学生众多。", "rent_price": "$700-1100/月", "transport_info": "CityBus公交，骑行可", "supermarket_info": "Meijer/Walmart/韩国超市均有", "area_info": "校园附近，步行10-20分钟", "daytrip_info": "印第安纳波利斯1h、芝加哥2h", "explore_info": "校园宇航员纪念碑、Columbian Park(免费)"}, "uillinois": {"zh": "伊利诺伊大学厄巴纳-香槟分校", "en": "University of Illinois Urbana-Champaign", "city": "香槟", "cityEn": "Champaign", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "全球顶尖公立工程计算机，中西部，华人学生比例极高，生活费低，学术氛围浓。", "rent_price": "$700-1100/月", "transport_info": "MTD公交，学生免费乘坐", "supermarket_info": "Walmart/Aldi/多家亚洲超市", "area_info": "Green Street学生区，步行5-15分钟", "daytrip_info": "芝加哥2.5h、印第安纳波利斯2h", "explore_info": "Krannert Art Museum(免费)、校园建筑漫步"}, "umn": {"zh": "明尼苏达大学", "en": "University of Minnesota", "city": "明尼阿波利斯", "cityEn": "Minneapolis", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖公立，明尼苏达双子城，夏季美丽，冬季极寒（-20°C），北欧文化。", "rent_price": "$800-1300/月", "transport_info": "Metro Transit轻轨+公交", "supermarket_info": "Whole Foods/Trader Joe's/亚洲超市", "area_info": "Dinkytown/Stadium Village，步行10-20分钟", "daytrip_info": "圣保罗市区20min、Mall of America30min", "explore_info": "Walker Art Center(学生优惠)、密西西比河步道"}, "usc": {"zh": "南加州大学", "en": "University of Southern California", "city": "洛杉矶", "cityEn": "Los Angeles", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "洛杉矶顶尖私立，传媒电影全球最强，阳光气候，好莱坞关系网，校园美丽。", "rent_price": "$1400-2500/月", "transport_info": "Metro Expo Line/公交，Uber常用", "supermarket_info": "99 Ranch/H-Mart/Whole Foods均有", "area_info": "South LA/Koreatown，开车10-20分钟", "daytrip_info": "圣莫尼卡海滩20min、迪士尼乐园1h", "explore_info": "博览公园自然史博物馆(免费)、好莱坞大道"}, "boston": {"zh": "波士顿大学", "en": "Boston University", "city": "波士顿", "cityEn": "Boston", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖私立，查尔斯河畔，绿线地铁沿途，波士顿全美最佳大学城之一。", "rent_price": "$1400-2200/月", "transport_info": "地铁Green Line BU Central站", "supermarket_info": "Star Market/Whole Foods/HMart均有", "area_info": "Allston/Brighton/Fenway，地铁10-20分钟", "daytrip_info": "剑桥MIT30min步行、Providence1h", "explore_info": "波士顿公共花园(免费)、Fenway球场"}, "emory": {"zh": "埃默里大学", "en": "Emory University", "city": "亚特兰大", "cityEn": "Atlanta", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖私立，医学研究强，亚特兰大气候温和，美国南方文化，CDC所在地。", "rent_price": "$1100-1800/月", "transport_info": "MARTA地铁/公交，Uber常用", "supermarket_info": "Whole Foods/Trader Joe's/亚洲超市", "area_info": "Druid Hills/Virginia Highland，开车15-20分钟", "daytrip_info": "Savannah3h、Great Smoky Mountains2h", "explore_info": "亚特兰大历史中心、Piedmont Park(免费)"}, "notre_dame": {"zh": "圣母大学", "en": "University of Notre Dame", "city": "南本德", "cityEn": "South Bend", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖天主教大学，足球传统浓厚，校园华丽，中西部小城，生活费低。", "rent_price": "$800-1200/月", "transport_info": "Transpo公交，开车方便", "supermarket_info": "Meijer/Martin's/Walmart均有", "area_info": "市区步行20-30分钟", "daytrip_info": "芝加哥1.5h、印第安纳波利斯1.5h", "explore_info": "Golden Dome大学建筑(免费参观)、圣母湖"}, "uw": {"zh": "华盛顿大学", "en": "University of Washington", "city": "西雅图", "cityEn": "Seattle", "country": "美国", "cc": "us", "flag": "🇺🇸", "intro": "美国顶尖公立，太平洋西北，科技公司环绕，微软Amazon毗邻，华人众多。", "rent_price": "$1300-2200/月", "transport_info": "Link Light Rail/公交", "supermarket_info": "Uwajimaya（日式亚洲超市）/多家亚洲超市", "area_info": "Capitol Hill/University District，公交15-20分钟", "daytrip_info": "温哥华3h、雷尼尔山2h", "explore_info": "派克市场(Pike Place，免费参观)、华盛顿大学四方庭园"}, "melbourne": {"zh": "墨尔本大学", "en": "University of Melbourne", "city": "墨尔本", "cityEn": "Melbourne", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖大学，文化之都，咖啡之城，电车(Tram)为特色，中国超市全澳最丰富。", "rent_price": "AUD 900-1400/月", "transport_info": "Myki卡，电车/地铁/公交", "supermarket_info": "Box Hill华人区中国超市最全，Aldi最便宜", "area_info": "Carlton/Fitzroy/Brunswick，步行/电车15-25分钟", "daytrip_info": "大洋路3h车、菲利普岛企鹅1.5h、丹顿农山区1h", "explore_info": "联邦广场(免费)、维多利亚国立美术馆(免费)"}, "sydney": {"zh": "悉尼大学", "en": "University of Sydney", "city": "悉尼", "cityEn": "Sydney", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，世界最美城市之一，歌剧院、海港大桥，阳光海滩，国际氛围最浓。", "rent_price": "AUD 1000-1700/月", "transport_info": "Opal卡，地铁/公交/渡轮", "supermarket_info": "市区多家超市，Haymarket华人区最近", "area_info": "Glebe/Newtown/Camperdown，公交10-20分钟", "daytrip_info": "蓝山2h车、猎人谷2h", "explore_info": "悉尼歌剧院外观(免费)、The Rocks历史区"}, "unsw": {"zh": "新南威尔士大学", "en": "University of New South Wales", "city": "悉尼", "cityEn": "Sydney", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖工程商科，紧邻Bondi Beach，阳光生活，UNSW华人学生众多。", "rent_price": "AUD 1000-1600/月", "transport_info": "Opal卡，公交/轻轨可达", "supermarket_info": "市区多家超市，UNSW附近便利店", "area_info": "Kensington/Randwick/Maroubra，公交15-25分钟", "daytrip_info": "Bondi Beach步行20min、蓝山2h", "explore_info": "Bondi Beach(免费)、UNSW GALLERY(免费)"}, "anu": {"zh": "澳大利亚国立大学", "en": "Australian National University", "city": "堪培拉", "cityEn": "Canberra", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲政治科研首都，全国最大图书馆，国立博物馆群，政治外交强校。", "rent_price": "AUD 750-1200/月", "transport_info": "ACTION公交，骑行方便", "supermarket_info": "Coles/Woolworths/Aldi均有，市区有亚洲超市", "area_info": "校园宿舍/Braddon，公交10-15分钟", "daytrip_info": "悉尼3h车、雪山Perisher1.5h", "explore_info": "澳大利亚国立博物馆(免费)、议会大厦(免费参观)"}, "queensland": {"zh": "昆士兰大学", "en": "University of Queensland", "city": "布里斯班", "cityEn": "Brisbane", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，布里斯班亚热带气候，2032奥运主办城市，靠近黄金海岸，性价比高。", "rent_price": "AUD 750-1200/月", "transport_info": "Go卡，公交/渡轮可达", "supermarket_info": "Aldi/Coles/Woolworths/亚洲超市均有", "area_info": "St Lucia/West End，公交/渡轮15-25分钟", "daytrip_info": "黄金海岸1h车、阳光海岸1.5h", "explore_info": "South Bank(免费)、昆士兰博物馆(免费)"}, "monash": {"zh": "莫纳什大学", "en": "Monash University", "city": "墨尔本", "cityEn": "Melbourne", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，医学药学强校，Clayton主校区距墨尔本市区30分钟，学生众多。", "rent_price": "AUD 850-1300/月", "transport_info": "Myki卡，火车可达，校园内有巴士", "supermarket_info": "Clayton Shopping Centre/Coles/Woolworths", "area_info": "Clayton/Caulfield/Oakleigh，火车/公交15-25分钟", "daytrip_info": "市区CBD30min、Dandenong Ranges1h", "explore_info": "Box Hill华人区采购、丹顿农山区"}, "uwa": {"zh": "西澳大学", "en": "University of Western Australia", "city": "珀斯", "cityEn": "Perth", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，珀斯全球最孤立大城市，阳光最多，海滩美丽，生活节奏慢，华人众多。", "rent_price": "AUD 700-1200/月", "transport_info": "Transperth公交/火车", "supermarket_info": "Coles/Woolworths/Aldi/亚洲超市均有", "area_info": "Subiaco/Nedlands，公交10-20分钟", "daytrip_info": "弗里曼特尔30min、玛格丽特河3h", "explore_info": "国王公园(免费)、科廷那里亚海滩"}, "adelaide": {"zh": "阿德莱德大学", "en": "University of Adelaide", "city": "阿德莱德", "cityEn": "Adelaide", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，南澳酒都，生活费全澳最低，阿德莱德是澳洲最宜居城市之一。", "rent_price": "AUD 650-1000/月", "transport_info": "Adelaide Metro公交/电车（市中心免费）", "supermarket_info": "Central Market/Coles/Woolworths均有", "area_info": "市区步行15-25分钟", "daytrip_info": "巴罗萨谷酒庄1h车、袋鼠岛2h", "explore_info": "Glenelg海滩30min、Adelaide Central Market"}, "unimelb_rmit": {"zh": "皇家墨尔本理工大学", "en": "RMIT University", "city": "墨尔本", "cityEn": "Melbourne", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖应用型，设计艺术商科强，位于墨尔本市中心，就业率极高。", "rent_price": "AUD 850-1300/月", "transport_info": "Myki卡，市中心步行可达多数地方", "supermarket_info": "市中心各超市步行可达", "area_info": "CBD/Fitzroy/Carlton，步行5-15分钟", "daytrip_info": "大洋路3h、菲利普岛企鹅1.5h", "explore_info": "联邦广场(免费)、墨尔本市区艺术涂鸦"}, "curtin": {"zh": "科廷大学", "en": "Curtin University", "city": "珀斯", "cityEn": "Perth", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖应用型，矿业工程全球最强，珀斯阳光充足，生活费低，华人社区大。", "rent_price": "AUD 650-1100/月", "transport_info": "Transperth公交", "supermarket_info": "Coles/Woolworths/亚洲超市均有", "area_info": "Bentley/Victoria Park，公交20-30分钟", "daytrip_info": "弗里曼特尔30min、Rottnest Island渡轮1h", "explore_info": "Rottnest Island短鼻负鼠、国王公园(免费)"}, "macquarie": {"zh": "麦考瑞大学", "en": "Macquarie University", "city": "悉尼", "cityEn": "Sydney", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，悉尼北区，有自己的地铁站！会计金融强，校园内有购物中心。", "rent_price": "AUD 900-1500/月", "transport_info": "地铁Macquarie University站（最方便）", "supermarket_info": "校内购物中心Coles，中国超市在Eastwood（地铁2站）", "area_info": "校园宿舍/Ryde/Epping", "daytrip_info": "悉尼市区30min地铁、蓝山2h", "explore_info": "悉尼天文台、Manly海滩40min地铁"}, "utas": {"zh": "塔斯马尼亚大学", "en": "University of Tasmania", "city": "霍巴特", "cityEn": "Hobart", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖研究型，塔斯马尼亚岛，世界最纯净空气，自然风光绝美，生活费低。", "rent_price": "AUD 550-900/月", "transport_info": "Metro Tasmania公交", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "市区步行15-25分钟", "daytrip_info": "布尼亚国家公园1h车、Port Arthur遗址1.5h", "explore_info": "MONA当代艺术馆（全澳最奇特）、萨拉曼卡市集"}, "newcastle_au": {"zh": "纽卡斯尔大学（澳洲）", "en": "University of Newcastle", "city": "纽卡斯尔", "cityEn": "Newcastle NSW", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖研究型，猎人谷葡萄酒庄旁，美丽海滩，全澳生活质量最高城市之一。", "rent_price": "AUD 650-1000/月", "transport_info": "Newcastle公交/轻轨", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "市区步行20-30分钟", "daytrip_info": "悉尼2h车、猎人谷1h", "explore_info": "Nobbys Beach(免费)、猎人谷酒庄"}, "wollongong": {"zh": "卧龙岗大学", "en": "University of Wollongong", "city": "卧龙岗", "cityEn": "Wollongong", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖研究型，悉尼南1.5小时，海边城市，工程计算机强，华人学生多。", "rent_price": "AUD 600-900/月", "transport_info": "CityBus公交", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "市区步行20-30分钟", "daytrip_info": "悉尼1.5h车、皇家国家公园1h", "explore_info": "Wollongong海滩(免费)、Nan Tien佛教寺庙"}, "griffith": {"zh": "格里菲斯大学", "en": "Griffith University", "city": "黄金海岸/布里斯班", "cityEn": "Gold Coast", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，黄金海岸校区就在海滩旁！冲浪、主题公园，国际留学生天堂。", "rent_price": "AUD 700-1200/月", "transport_info": "Go卡，公交/轻轨", "supermarket_info": "Coles/Woolworths/亚洲超市均有", "area_info": "市区步行/公交20-30分钟", "daytrip_info": "冲浪者天堂5min、布里斯班1h", "explore_info": "Surfers Paradise海滩(免费)、Sea World"}, "deakin": {"zh": "迪肯大学", "en": "Deakin University", "city": "吉朗/墨尔本", "cityEn": "Geelong", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，吉朗校区靠近大洋路，商科强，国际学生友好，生活费比墨尔本低。", "rent_price": "AUD 700-1100/月", "transport_info": "V-Line火车到墨尔本1h", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "市区步行20-30分钟", "daytrip_info": "墨尔本1h车、大洋路2h", "explore_info": "Bells Beach冲浪地免费、大洋路"}, "uq_jcu": {"zh": "詹姆斯库克大学", "en": "James Cook University", "city": "汤斯维尔", "cityEn": "Townsville", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，热带北昆士兰，海洋科学全球第一，大堡礁门户，热带气候。", "rent_price": "AUD 600-900/月", "transport_info": "Sunbus公交", "supermarket_info": "Coles/Woolworths均有", "area_info": "市区步行20-30分钟", "daytrip_info": "大堡礁Cairns4h车、磁性岛渡轮30min", "explore_info": "磁性岛(免费漫步)、大堡礁潜水"}, "flinders": {"zh": "弗林德斯大学", "en": "Flinders University", "city": "阿德莱德", "cityEn": "Adelaide", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖研究型，Bedford Park校区，医学研究强，阿德莱德生活费最低之一。", "rent_price": "AUD 600-950/月", "transport_info": "Adelaide Metro公交/火车", "supermarket_info": "Westfield Marion购物中心/Coles", "area_info": "Clovelly Park/Plympton，公交20-30分钟", "daytrip_info": "葛雷林山Gorge1h、袋鼠岛2h", "explore_info": "McLaren Vale葡萄酒1h、Hallett Cove海岸"}, "latrobe": {"zh": "拉筹伯大学", "en": "La Trobe University", "city": "墨尔本", "cityEn": "Melbourne", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖，Bundoora主校区，护理健康强校，国际学生众多，生活费低。", "rent_price": "AUD 750-1200/月", "transport_info": "Myki卡，电车/公交可达", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "Preston/Northcote，电车/公交30-40分钟", "daytrip_info": "CBD30min电车、Yarra Valley酒庄1h", "explore_info": "墨尔本市区文化、大洋路3h"}, "canberra": {"zh": "堪培拉大学", "en": "University of Canberra", "city": "堪培拉", "cityEn": "Canberra", "country": "澳大利亚", "cc": "au", "flag": "🇦🇺", "intro": "澳洲顶尖应用型，澳大利亚首都，国立博物馆群，政治实习机会多，生活费低。", "rent_price": "AUD 650-1000/月", "transport_info": "ACTION公交，骑行方便", "supermarket_info": "Coles/Woolworths/Aldi均有", "area_info": "Bruce/Belconnen，公交15-20分钟", "daytrip_info": "悉尼3h、雪山Perisher1.5h", "explore_info": "澳大利亚战争纪念馆(免费)、议会大厦(免费)"}, "toronto": {"zh": "多伦多大学", "en": "University of Toronto", "city": "多伦多", "cityEn": "Toronto", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，北美最大华人社区之一，T&T中国超市，多元文化，科研实力强。", "rent_price": "CAD 1000-1700/月", "transport_info": "TTC地铁/公交，PRESTO卡", "supermarket_info": "T&T华人超市/No Frills/Aldi均有", "area_info": "Annex/Kensington Market，步行10-20分钟", "daytrip_info": "尼亚加拉大瀑布1.5h、蒙特利尔5h", "explore_info": "多伦多唐人街(全北美最大之一)、CN Tower"}, "ubc": {"zh": "不列颠哥伦比亚大学", "en": "University of British Columbia", "city": "温哥华", "cityEn": "Vancouver", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，温哥华太平洋海岸，最宜居城市，华人最多，自然风光壮美。", "rent_price": "CAD 1100-1900/月", "transport_info": "TransLink公交/SkyTrain，Compass卡", "supermarket_info": "T&T超市（华人超市最强）/Aldi均有", "area_info": "Point Grey/Kitsilano/West Side", "daytrip_info": "维多利亚轮渡1.5h、惠斯勒2h滑雪", "explore_info": "UBC玫瑰园(免费)、史丹利公园(免费)"}, "mcgill": {"zh": "麦吉尔大学", "en": "McGill University", "city": "蒙特利尔", "cityEn": "Montreal", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，蒙特利尔法语文化独特，饮食文化丰富，生活费低，艺术氛围浓厚。", "rent_price": "CAD 800-1300/月", "transport_info": "STM地铁/公交", "supermarket_info": "多家超市，中国超市在唐人街", "area_info": "Plateau/Mile End，地铁10-15分钟", "daytrip_info": "魁北克城3h、渥太华2h", "explore_info": "蒙特利尔艺术博物馆(免费开放日)、老港区(免费)"}, "waterloo": {"zh": "滑铁卢大学", "en": "University of Waterloo", "city": "滑铁卢", "cityEn": "Waterloo", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "全球最顶尖计算机工程，Co-op实习制度全球最强，硅谷留学生首选，华人众多。", "rent_price": "CAD 700-1100/月", "transport_info": "Grand River Transit公交", "supermarket_info": "Sobeys/Walmart/亚洲超市均有", "area_info": "市区步行15-25分钟", "daytrip_info": "多伦多1h车、尼亚加拉大瀑布1.5h", "explore_info": "Waterloo公园(免费)、CMH博物馆"}, "alberta": {"zh": "阿尔伯塔大学", "en": "University of Alberta", "city": "埃德蒙顿", "cityEn": "Edmonton", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖研究型，石油之都，资源工程强，冬季极寒但生活费低，华人多。", "rent_price": "CAD 700-1100/月", "transport_info": "ETS公交/LRT", "supermarket_info": "Superstore/Walmart/亚洲超市均有", "area_info": "Whyte Ave/Oliver，公交15-25分钟", "daytrip_info": "班夫国家公园3h、卡尔加里3h", "explore_info": "班夫国家公园（必去）、西埃德蒙顿购物中心"}, "queens": {"zh": "女王大学", "en": "Queen's University", "city": "京斯顿", "cityEn": "Kingston", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，历史最悠久之一，安大略湖畔小城，学院风浓厚，生活费低。", "rent_price": "CAD 800-1200/月", "transport_info": "Kingston Transit公交", "supermarket_info": "Loblaws/No Frills/Walmart均有", "area_info": "市区步行15-25分钟", "daytrip_info": "多伦多2.5h、渥太华2h", "explore_info": "千岛湖国家公园（必游）、皇家军事学院"}, "dalhousie": {"zh": "达尔豪西大学", "en": "Dalhousie University", "city": "哈利法克斯", "cityEn": "Halifax", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖研究型，大西洋海岸，海洋科学强，历史港口城市，生活费低。", "rent_price": "CAD 700-1100/月", "transport_info": "Halifax Transit公交", "supermarket_info": "Sobeys/Walmart/亚洲超市均有", "area_info": "South End/North End，步行20-30分钟", "daytrip_info": "Cape Breton Island3h、PEI爱德华王子岛3h", "explore_info": "Halifax Waterfront(免费)、Citadel Hill要塞(免费)"}, "uottawa": {"zh": "渥太华大学", "en": "University of Ottawa", "city": "渥太华", "cityEn": "Ottawa", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大首都，法英双语大学，政府实习机会最多，国立博物馆全部免费！", "rent_price": "CAD 800-1200/月", "transport_info": "OC Transpo公交/O-Train", "supermarket_info": "多家超市均有，ByWard Market新鲜食材", "area_info": "Sandy Hill/Centretown，步行15-25分钟", "daytrip_info": "蒙特利尔2h、多伦多4.5h", "explore_info": "加拿大国立博物馆(所有免费)、议会山(免费)"}, "calgary": {"zh": "卡尔加里大学", "en": "University of Calgary", "city": "卡尔加里", "cityEn": "Calgary", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖研究型，班夫国家公园门户，油气能源强，生活费低，华人众多。", "rent_price": "CAD 800-1200/月", "transport_info": "Calgary Transit C-Train/公交", "supermarket_info": "Superstore/T&T/Walmart均有", "area_info": "Brentwood/University Heights，地铁10-20分钟", "daytrip_info": "班夫国家公园1.5h、莱斯布里奇2h", "explore_info": "班夫国家公园（全球最美之一）、Calgary Stampede"}, "sfu": {"zh": "西门菲沙大学", "en": "Simon Fraser University", "city": "本拿比/温哥华", "cityEn": "Burnaby", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，山顶校园景色壮观，温哥华都市圈，计算机商科强，华人众多。", "rent_price": "CAD 1000-1700/月", "transport_info": "TransLink SkyTrain，Compass卡", "supermarket_info": "T&T/No Frills/Walmart均有", "area_info": "Burnaby/New Westminster，SkyTrain15-25分钟", "daytrip_info": "温哥华市区30min、维多利亚轮渡2h", "explore_info": "Burnaby Mountain公园(免费)、温哥华Stanley Park"}, "laval": {"zh": "拉瓦尔大学", "en": "Université Laval", "city": "魁北克城", "cityEn": "Quebec City", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，魁北克法语文化中心，北美保存最完整的古城，世界遗产级别。", "rent_price": "CAD 650-1000/月", "transport_info": "RTC公交", "supermarket_info": "IGA/Maxi/Metro均有", "area_info": "市区步行20-30分钟", "daytrip_info": "蒙特利尔2.5h、Charlevoix地区2h", "explore_info": "魁北克老城(世界遗产，免费漫步)、Chateau Frontenac"}, "westernU": {"zh": "西安大略大学", "en": "University of Western Ontario", "city": "伦敦", "cityEn": "London ON", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，安大略省小城伦敦，医学商科强，国际学生友好，生活费低。", "rent_price": "CAD 700-1100/月", "transport_info": "London Transit公交", "supermarket_info": "Superstore/Walmart/亚洲超市均有", "area_info": "市区步行20-30分钟", "daytrip_info": "多伦多2h、尼亚加拉大瀑布2.5h", "explore_info": "Covent Garden Market(免费)、Thames River步道"}, "mcmaster": {"zh": "麦克马斯特大学", "en": "McMaster University", "city": "汉密尔顿", "cityEn": "Hamilton", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖研究型，医学健康科学全球排名前20，安大略湖南，多伦多1小时。", "rent_price": "CAD 800-1200/月", "transport_info": "HSR公交，GO Transit到多伦多", "supermarket_info": "Fortinos/Walmart/亚洲超市均有", "area_info": "Westdale/Ainslie Wood，步行15-25分钟", "daytrip_info": "多伦多1h、尼亚加拉大瀑布1h", "explore_info": "Webster's Falls(免费)、皇家植物园(部分免费)"}, "uvic": {"zh": "维多利亚大学", "en": "University of Victoria", "city": "维多利亚", "cityEn": "Victoria", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖，温哥华岛，英国风情浓厚，气候全加最温和，花园城市，生活费低。", "rent_price": "CAD 800-1200/月", "transport_info": "BC Transit公交", "supermarket_info": "Thrifty Foods/Walmart/亚洲超市均有", "area_info": "Oak Bay/Fairfield，公交15-25分钟", "daytrip_info": "温哥华轮渡1.5h、Tofino3h", "explore_info": "Victoria Butchart Gardens、内港(免费漫步)"}, "concordia": {"zh": "康考迪亚大学", "en": "Concordia University", "city": "蒙特利尔", "cityEn": "Montreal", "country": "加拿大", "cc": "ca", "flag": "🇨🇦", "intro": "加拿大顶尖应用型，蒙特利尔法语文化，艺术设计传媒强，国际学生最多，生活费低。", "rent_price": "CAD 750-1200/月", "transport_info": "STM地铁/公交", "supermarket_info": "多家超市，唐人街中国超市", "area_info": "Plateau/Mile End，地铁10-15分钟", "daytrip_info": "魁北克城3h、渥太华2h", "explore_info": "蒙特利尔爵士音乐节、Parc du Mont-Royal(免费)"}};
+const KW = {"oxford": ["牛津", "university of oxford", "oxford", "牛津大学", "uo"], "cambridge": ["剑桥大学", "uc", "剑桥", "university of cambridge", "cambridge"], "imperial": ["伦敦", "london", "imperial college london", "icl", "帝国理工学院", "imperial"], "lse": ["伦敦", "london", "lse", "伦敦政治经济学院", "london school of economics"], "kcl": ["伦敦", "london", "kcl", "伦敦国王学院", "king's college london"], "ucl": ["伦敦", "london", "伦敦大学学院", "ucl", "university college london"], "edinburgh": ["爱丁堡大学", "edinburgh", "ue", "爱丁堡", "university of edinburgh"], "glasgow": ["格拉斯哥大学", "university of glasgow", "glasgow", "格拉斯哥", "ug"], "bristol": ["布里斯托大学", "ub", "bristol", "university of bristol", "布里斯托"], "manchester": ["university of manchester", "um", "曼彻斯特大学", "manchester", "曼彻斯特"], "warwick": ["university of warwick", "coventry", "warwick", "考文垂", "uw", "华威大学"], "lancaster": ["lancaster", "兰卡斯特", "ul", "university of lancaster", "兰卡斯特大学"], "exeter": ["埃克塞特大学", "埃克塞特", "ue", "university of exeter", "exeter"], "bath": ["bath", "巴斯", "ub", "university of bath", "巴斯大学"], "york": ["uy", "约克", "york", "university of york", "约克大学"], "uea": ["norwich", "东安格利亚大学", "诺里奇", "uea", "university of east anglia"], "sheffield": ["us", "sheffield", "谢菲尔德大学", "university of sheffield", "谢菲尔德"], "leeds": ["利兹大学", "leeds", "ul", "利兹", "university of leeds"], "birmingham": ["伯明翰大学", "ub", "university of birmingham", "伯明翰", "birmingham"], "southampton": ["南安普顿大学", "us", "university of southampton", "southampton", "南安普顿"], "nottingham": ["university of nottingham", "un", "诺丁汉", "诺丁汉大学", "nottingham"], "leicester": ["leicester", "university of leicester", "莱斯特", "莱斯特大学", "ul"], "loughborough": ["拉夫堡", "loughborough", "loughborough university", "拉夫堡大学", "lu"], "cardiff": ["cardiff university", "cardiff", "卡迪夫大学", "cu", "卡迪夫"], "durham": ["杜伦", "du", "杜伦大学", "durham university", "durham"], "newcastle": ["newcastle university", "纽卡斯尔大学", "纽卡斯尔", "newcastle", "nu"], "liverpool": ["利物浦", "liverpool", "利物浦大学", "university of liverpool", "ul"], "reading": ["雷丁", "ur", "雷丁大学", "reading", "university of reading"], "surrey": ["us", "university of surrey", "guildford", "吉尔福德", "萨里大学", "surrey"], "sussex": ["sussex", "us", "苏塞克斯大学", "布莱顿", "brighton", "university of sussex"], "kent": ["canterbury", "肯特大学", "uk", "kent", "university of kent", "坎特伯雷"], "leicester_dm": ["leicester", "莱斯特", "leicester_dm", "de montfort university", "dmu", "德蒙福特大学"], "brighton": ["university of brighton", "ub", "布莱顿", "brighton", "布莱顿大学"], "hertfordshire": ["哈特菲尔德", "university of hertfordshire", "hatfield", "hertfordshire", "uh", "赫特福德大学"], "middlesex": ["mu", "伦敦", "london", "middlesex university", "米德尔塞克斯大学", "middlesex"], "westminster": ["伦敦", "westminster", "london", "university of westminster", "uw", "威斯敏斯特大学"], "northumbria": ["northumbria university", "诺森比亚大学", "northumbria", "纽卡斯尔", "newcastle", "nu"], "coventry": ["考文垂大学", "coventry", "考文垂", "cu", "coventry university"], "portsmouth": ["portsmouth", "朴次茅斯大学", "university of portsmouth", "朴次茅斯", "up"], "hull": ["hull", "university of hull", "uh", "赫尔", "赫尔大学"], "mit": ["mit", "cambridge ma", "massachusetts institute of technology", "麻省理工学院", "剑桥（波士顿）"], "harvard": ["harvard", "波士顿", "harvard university", "hu", "boston", "哈佛大学"], "stanford": ["su", "stanford university", "帕洛阿尔托", "斯坦福大学", "stanford", "palo alto"], "columbia": ["哥伦比亚大学", "columbia", "new york", "columbia university", "cu", "纽约"], "nyu": ["nyu", "new york", "new york university", "纽约大学", "纽约"], "chicago": ["chicago", "university of chicago", "uc", "芝加哥", "芝加哥大学"], "northwestern": ["西北大学", "埃文斯顿", "northwestern", "northwestern university", "evanston", "nu"], "ucla": ["加利福尼亚大学洛杉矶分校", "university of california los angeles", "ucla", "洛杉矶", "los angeles"], "ucberkeley": ["ucberkeley", "university of california berkeley", "ucb", "加利福尼亚大学伯克利分校", "伯克利", "berkeley"], "carnegie": ["cmu", "匹兹堡", "pittsburgh", "卡内基梅隆大学", "carnegie mellon university", "carnegie"], "penn": ["费城", "penn", "宾夕法尼亚大学", "university of pennsylvania", "philadelphia", "up"], "duke": ["du", "duke", "达勒姆", "杜克大学", "durham nc", "duke university"], "johns_hopkins": ["johns_hopkins", "约翰斯·霍普金斯大学", "巴尔的摩", "jhu", "baltimore", "johns hopkins university"], "vanderbilt": ["vanderbilt university", "纳什维尔", "vu", "范德比尔特大学", "nashville", "vanderbilt"], "cornell": ["cornell university", "ithaca", "康奈尔大学", "cu", "伊萨卡", "cornell"], "dartmouth": ["dartmouth college", "dartmouth", "hanover nh", "dc", "汉诺威", "达特茅斯学院"], "georgetown": ["georgetown university", "georgetown", "乔治城大学", "华盛顿特区", "gu", "washington dc"], "purdue": ["purdue university", "普渡大学", "purdue", "west lafayette", "pu", "西拉法叶"], "uillinois": ["university of illinois urbana-champaign", "champaign", "uillinois", "伊利诺伊大学厄巴纳-香槟分校", "uiu", "香槟"], "umn": ["umn", "um", "明尼阿波利斯", "明尼苏达大学", "minneapolis", "university of minnesota"], "usc": ["南加州大学", "university of southern california", "usc", "洛杉矶", "los angeles"], "boston": ["波士顿", "bu", "boston university", "波士顿大学", "boston"], "emory": ["埃默里大学", "atlanta", "亚特兰大", "eu", "emory university", "emory"], "notre_dame": ["south bend", "南本德", "und", "university of notre dame", "notre_dame", "圣母大学"], "uw": ["university of washington", "华盛顿大学", "seattle", "uw", "西雅图"], "melbourne": ["melbourne", "um", "墨尔本大学", "university of melbourne", "墨尔本"], "sydney": ["us", "sydney", "悉尼", "悉尼大学", "university of sydney"], "unsw": ["university of new south wales", "sydney", "悉尼", "unsw", "新南威尔士大学"], "anu": ["澳大利亚国立大学", "堪培拉", "australian national university", "canberra", "anu"], "queensland": ["queensland", "uq", "university of queensland", "brisbane", "布里斯班", "昆士兰大学"], "monash": ["melbourne", "mu", "莫纳什大学", "monash university", "墨尔本", "monash"], "uwa": ["珀斯", "uwa", "perth", "西澳大学", "university of western australia"], "adelaide": ["adelaide", "阿德莱德", "university of adelaide", "阿德莱德大学", "ua"], "unimelb_rmit": ["melbourne", "rmit university", "墨尔本", "unimelb_rmit", "ru", "皇家墨尔本理工大学"], "curtin": ["珀斯", "cu", "curtin university", "curtin", "perth", "科廷大学"], "macquarie": ["mu", "macquarie university", "sydney", "麦考瑞大学", "悉尼", "macquarie"], "utas": ["霍巴特", "utas", "university of tasmania", "塔斯马尼亚大学", "hobart", "ut"], "newcastle_au": ["un", "university of newcastle", "newcastle_au", "newcastle nsw", "纽卡斯尔大学（澳洲）", "纽卡斯尔"], "wollongong": ["卧龙岗", "uw", "university of wollongong", "wollongong", "卧龙岗大学"], "griffith": ["griffith", "黄金海岸/布里斯班", "格里菲斯大学", "gu", "gold coast", "griffith university"], "deakin": ["迪肯大学", "du", "吉朗/墨尔本", "deakin", "geelong", "deakin university"], "uq_jcu": ["townsville", "汤斯维尔", "james cook university", "uq_jcu", "詹姆斯库克大学", "jcu"], "flinders": ["阿德莱德", "弗林德斯大学", "adelaide", "fu", "flinders university", "flinders"], "latrobe": ["melbourne", "拉筹伯大学", "latrobe", "ltu", "墨尔本", "la trobe university"], "canberra": ["堪培拉", "university of canberra", "canberra", "uc", "堪培拉大学"], "toronto": ["多伦多大学", "ut", "toronto", "university of toronto", "多伦多"], "ubc": ["不列颠哥伦比亚大学", "vancouver", "温哥华", "ubc", "university of british columbia"], "mcgill": ["mu", "mcgill", "mcgill university", "麦吉尔大学", "蒙特利尔", "montreal"], "waterloo": ["university of waterloo", "滑铁卢大学", "waterloo", "uw", "滑铁卢"], "alberta": ["university of alberta", "alberta", "edmonton", "ua", "阿尔伯塔大学", "埃德蒙顿"], "queens": ["女王大学", "queens", "queen's university", "kingston", "京斯顿", "qu"], "dalhousie": ["du", "达尔豪西大学", "dalhousie", "halifax", "dalhousie university", "哈利法克斯"], "uottawa": ["渥太华", "ottawa", "university of ottawa", "uo", "uottawa", "渥太华大学"], "calgary": ["卡尔加里大学", "uc", "calgary", "university of calgary", "卡尔加里"], "sfu": ["本拿比/温哥华", "西门菲沙大学", "sfu", "burnaby", "simon fraser university"], "laval": ["université laval", "laval", "拉瓦尔大学", "ul", "魁北克城", "quebec city"], "westernU": ["伦敦", "london on", "uwo", "university of western ontario", "westernU", "西安大略大学"], "mcmaster": ["mu", "汉密尔顿", "mcmaster", "mcmaster university", "麦克马斯特大学", "hamilton"], "uvic": ["victoria", "uvic", "uv", "维多利亚大学", "university of victoria", "维多利亚"], "concordia": ["concordia university", "cu", "康考迪亚大学", "蒙特利尔", "concordia", "montreal"]};
+const CI = {"uk": {"ticket_links": [{"name": "🚆 Trainline 订票", "url": "https://www.thetrainline.com", "cls": "btn-primary"}, {"name": "TrainPal 抢便宜票", "url": "https://www.trainpal.com", "cls": "btn-outline"}, {"name": "National Rail", "url": "https://www.nationalrail.co.uk", "cls": "btn-outline"}], "railcard": {"text": "🎫 16-25 Railcard — 全国火车1/3折，年费仅£30，强烈推荐！", "url": "https://www.16-25railcard.co.uk"}, "bus_links": [{"name": "Megabus", "url": "https://uk.megabus.com"}, {"name": "National Express", "url": "https://www.nationalexpress.com"}], "bank_main": [{"name": "Monzo", "url": "https://monzo.com", "desc": "护照即可开户，无需信用史，最受留学生欢迎", "tag": "最推荐"}, {"name": "Starling Bank", "url": "https://www.starlingbank.com", "desc": "同样方便开户，存款有利息"}, {"name": "Barclays Student", "url": "https://www.barclays.co.uk/current-accounts/student-account/", "desc": "免息透支额度，市区有分行", "tag": "透支额度"}], "bank_mat": "护照 + BRP签证卡 + 大学录取信 + 地址证明（租房合同或账单）", "bank_remit": "Wise（原TransferWise）手续费最低，汇率最优", "bank_ni": "打工必须申请 National Insurance Number（NI号）", "bank_ni_link": "https://www.gov.uk/apply-national-insurance-number", "bank_tax": "每周最多打工20小时（假期无限制），年收入低于£12,570不缴税", "rent_rules": [["押金保护", "押金上限5周租金，房东须在30天内存入TDS/DPS/mydeposits官方保护计划"], ["中介费", "2019年后中介不得向租客收取任何费用，违规可向Citizens Advice举报"], ["合同提示", "注意break clause（提前解约条款），搬入时务必拍照/录像记录所有房屋状态"]], "platforms": [{"name": "SpareRoom", "url": "https://www.spareroom.co.uk", "desc": "英国最大合租平台"}, {"name": "Rightmove", "url": "https://www.rightmove.co.uk", "desc": "整租公寓为主"}, {"name": "Zoopla", "url": "https://www.zoopla.co.uk", "desc": "价格对比方便"}, {"name": "UniHomes", "url": "https://www.unihomes.co.uk", "desc": "学生专属，含账单"}], "checklist_country": ["护照有效期>1年，BRP签证卡到达后在邮局领取", "在Monzo/Starling官网提前开户，落地即可激活", "购买16-25 Railcard（£30/年，全国火车1/3折，必买）", "申请NI号码（gov.uk在线申请，打工必备）", "确认押金已存入TDS/DPS押金保护计划", "注册UniDays和Student Beans享受学生折扣"]}, "us": {"ticket_links": [{"name": "🚆 Amtrak 火车", "url": "https://www.amtrak.com", "cls": "btn-primary"}, {"name": "Greyhound 巴士", "url": "https://www.greyhound.com", "cls": "btn-outline"}, {"name": "FlixBus", "url": "https://www.flixbus.com", "cls": "btn-outline"}], "railcard": null, "bus_links": [{"name": "FlixBus", "url": "https://www.flixbus.com"}, {"name": "Megabus", "url": "https://www.megabus.com"}], "bank_main": [{"name": "Chase Student", "url": "https://www.chase.com", "desc": "美国最大银行，学生账户友好，分行多", "tag": "最推荐"}, {"name": "Bank of America", "url": "https://www.bankofamerica.com", "desc": "全国分行多，学生账户免月费"}, {"name": "Wise", "url": "https://wise.com", "desc": "接收国内汇款首选，换汇率最优", "tag": "汇款推荐"}], "bank_mat": "护照 + I-20 + 录取信 + 学生证（部分银行需SSN，可等到达后申请）", "bank_remit": "Wise换汇率最优，手续费约为银行的1/5", "bank_ni": "打工需要申请 Social Security Number（SSN），有合法工作后申请", "bank_ni_link": "https://www.ssa.gov/ssnumber/", "bank_tax": "F-1签证学期内每周最多打工20小时，校外打工需CPT/OPT授权", "rent_rules": [["押金", "通常1-2个月租金，各州法律不同"], ["信用记录", "美国租房通常需要信用记录，留学生可用存款证明+录取信代替"], ["租客险", "建议购买Renter's Insurance，约$15-20/月，Lemonade性价比高"]], "platforms": [{"name": "Zillow", "url": "https://www.zillow.com", "desc": "美国最大租房平台"}, {"name": "Apartments.com", "url": "https://www.apartments.com", "desc": "公寓专用平台"}, {"name": "Craigslist", "url": "https://www.craigslist.org", "desc": "合租和便宜房源"}, {"name": "Facebook Marketplace", "url": "https://www.facebook.com/marketplace", "desc": "华人群组找室友"}], "checklist_country": ["护照 + F-1签证 + I-20 + SEVIS缴费收据", "换约$500美元现金，或提前开Wise账户", "了解F-1签证打工限制（学期每周20小时）", "申请SSN（有合法工作后）", "申请Discover Student信用卡建立信用记录", "注册StudentUniverse享受学生机票折扣"]}, "au": {"ticket_links": [{"name": "🚆 Trainlink/各州交通", "url": "https://transportnsw.info", "cls": "btn-primary"}, {"name": "Jetstar 廉价航空", "url": "https://www.jetstar.com", "cls": "btn-outline"}, {"name": "Virgin Australia", "url": "https://www.virginaustralia.com", "cls": "btn-outline"}], "railcard": null, "bus_links": [{"name": "FlixBus澳洲", "url": "https://www.flixbus.com.au"}, {"name": "Greyhound澳洲", "url": "https://www.greyhound.com.au"}], "bank_main": [{"name": "Commonwealth Bank (CBA)", "url": "https://www.commbank.com.au/banking/student-bank-account.html", "desc": "可出发前网上开户，到达激活，最推荐", "tag": "最推荐"}, {"name": "ANZ", "url": "https://www.anz.com.au", "desc": "同样支持提前网上开户"}, {"name": "Wise", "url": "https://wise.com", "desc": "接收国内汇款首选", "tag": "汇款推荐"}], "bank_mat": "护照 + 学生签证（eVisa打印）+ 地址证明（到达后）", "bank_remit": "Wise汇款推荐，CBA/ANZ可提前网上开户", "bank_ni": "打工必须申请 Tax File Number（TFN）", "bank_ni_link": "https://www.ato.gov.au/individuals-and-families/tax-file-number", "bank_tax": "学生签证持有者每两周可工作48小时（2023年后政策），TFN申请约28天", "rent_rules": [["押金", "通常4周租金，须存入各州官方机构（NSW: NSW Fair Trading）"], ["合同", "一般12个月固定租约，注意bills included是否含网络"], ["OSHC", "学签强制购买OSHC海外学生医保，签证申请时完成"]], "platforms": [{"name": "realestate.com.au", "url": "https://www.realestate.com.au", "desc": "澳洲最大租房平台"}, {"name": "Domain", "url": "https://www.domain.com.au", "desc": "第二大平台"}, {"name": "Flatmates", "url": "https://www.flatmates.com.au", "desc": "合租专用"}, {"name": "Student.com", "url": "https://www.student.com", "desc": "学生公寓专用"}], "checklist_country": ["护照 + 学生签证（eVisa）+ OSHC保险证明", "CBA/ANZ提前网上开户，到达激活", "ATO官网申请TFN税号（打工必备，约28天）", "各州申请公交Concession Card（半价！）", "下载各州公交App（Opal/Myki等）", "加入学校CSSA中国学生学者联合会"]}, "ca": {"ticket_links": [{"name": "🚆 VIA Rail 火车", "url": "https://www.viarail.ca", "cls": "btn-primary"}, {"name": "FlixBus Canada", "url": "https://www.flixbus.ca", "cls": "btn-outline"}, {"name": "Megabus", "url": "https://www.megabus.com", "cls": "btn-outline"}], "railcard": null, "bus_links": [{"name": "FlixBus", "url": "https://www.flixbus.ca"}, {"name": "Greyhound", "url": "https://www.greyhound.ca"}], "bank_main": [{"name": "TD Student Account", "url": "https://www.td.com/ca/en/personal-banking/products/bank-accounts/student-bank-accounts/", "desc": "加拿大留学生最友好，无月费", "tag": "最推荐"}, {"name": "Scotiabank StartRight", "url": "https://www.scotiabank.com/ca/en/personal/bank-accounts/chequing-accounts/startright-program.html", "desc": "专为国际学生设计，无月费"}, {"name": "Wise", "url": "https://wise.com", "desc": "汇款首选", "tag": "汇款推荐"}], "bank_mat": "护照 + Study Permit + 学生证（部分银行无需SIN）", "bank_remit": "Wise换汇率优，多伦多/温哥华有中国银行分行", "bank_ni": "打工必须申请 Social Insurance Number（SIN）", "bank_ni_link": "https://www.canada.ca/en/employment-social-development/services/sin.html", "bank_tax": "学签持有者校外打工无小时数限制（2023年后政策），4月30日前报税", "rent_rules": [["押金", "各省不同，BC省上限半月租金，安省房东可要求1个月"], ["租约", "一般12个月固定租约或月租，留学生推荐12个月"], ["冬季", "冬季暖气费用注意是否包含在租金内"]], "platforms": [{"name": "Kijiji", "url": "https://www.kijiji.ca", "desc": "加拿大最大分类信息"}, {"name": "PadMapper", "url": "https://www.padmapper.com", "desc": "地图找房很方便"}, {"name": "Rentals.ca", "url": "https://rentals.ca", "desc": "全国租房平台"}, {"name": "Facebook Marketplace", "url": "https://www.facebook.com/marketplace", "desc": "华人群组找室友"}], "checklist_country": ["护照 + Study Permit（学签）", "换约CAD 500加元现金", "TD/Scotiabank开户（国际学生友好）", "购买PRESTO/Compass/OPUS等本地交通卡", "Service Canada申请SIN号（打工必备）", "Wealthsimple Tax了解（每年4月30日前报税）"]}};
+const ET = {"uk_london": {"places": [{"n": "大英博物馆", "t": "博物馆", "d": "世界顶级博物馆，藏品超800万件，完全免费，必去。", "free": "yes", "e": "🏛", "mq": "British Museum London", "wl": "https://www.britishmuseum.org", "wn": "官网"}, {"n": "国家美术馆", "t": "博物馆", "d": "特拉法加广场，欧洲最重要绘画收藏，免费。", "free": "yes", "e": "🎨", "mq": "National Gallery London", "wl": "https://www.nationalgallery.org.uk", "wn": "官网"}, {"n": "伦敦唐人街", "t": "美食文化", "d": "Gerrard St，中国超市和餐馆密集，春节期间热闹非凡。", "free": "yes", "e": "🏮", "mq": "London Chinatown Gerrard Street", "wl": "", "wn": ""}, {"n": "Borough Market", "t": "美食市集", "d": "伦敦最著名食品市集，周四至六，各国美食应有尽有。", "free": "yes", "e": "🛒", "mq": "Borough Market London", "wl": "https://boroughmarket.org.uk", "wn": "官网"}, {"n": "海德公园", "t": "皇家公园", "d": "伦敦最大皇家公园，野餐、跑步、划船，四季美丽。", "free": "yes", "e": "🌳", "mq": "Hyde Park London", "wl": "", "wn": ""}], "trips": [{"d": "布莱顿", "e": "🏖", "how": "火车约1小时", "why": "英国最受欢迎海滨城市，码头游乐场，夜生活丰富。", "hi": ["Brighton Pier", "Brighton Beach", "The Lanes购物", "Royal Pavilion"], "sv": ["Brighton Rock糖果", "海边工艺品", "Brighton Gin"], "tip": "夏天周末人多，建议工作日前往", "tn": "Trainline订票", "tu": "https://www.thetrainline.com", "mq": "Brighton seafront", "wu": "https://www.visitbrighton.com", "wn": "布莱顿旅游"}, {"d": "温莎城堡", "e": "👑", "how": "火车约40分钟", "why": "英国王室居住地，世界最大有人居住城堡，换岗仪式壮观。", "hi": ["城堡内部参观", "换岗仪式", "温莎小镇漫步", "伊顿公学"], "sv": ["王室纪念品", "骨瓷茶具", "英国茶叶", "皇冠文创"], "tip": "网上提前购票省排队时间", "tn": "购城堡门票", "tu": "https://www.rct.uk/visit/windsorcastle", "mq": "Windsor Castle", "wu": "https://www.rct.uk/visit/windsorcastle", "wn": "温莎城堡官网"}, {"d": "牛津", "e": "🎓", "how": "火车/巴士约1小时", "why": "世界最著名大学城，哈利波特取景地，古老学院群。", "hi": ["基督堂学院", "博德利图书馆", "Blackwell书店", "Covered Market"], "sv": ["牛津大学文创", "学术书籍", "英国茶叶", "手工果酱"], "tip": "建议工作日前往，周末游客较多", "tn": "Trainline订票", "tu": "https://www.thetrainline.com", "mq": "Oxford city centre", "wu": "https://www.visitoxfordandoxfordshire.com", "wn": "牛津旅游"}], "souvenirs": [{"n": "博物馆文创", "e": "🏛", "d": "BM/National Gallery"}, {"n": "英国茶叶礼盒", "e": "🫖", "d": "Fortnum & Mason"}, {"n": "London文创", "e": "🎡", "d": "Camden Market"}, {"n": "精酿啤酒", "e": "🍺", "d": "Borough Market精选"}]}, "uk_general": {"places": [{"n": "当地历史博物馆", "t": "博物馆", "d": "了解当地历史文化，大多数英国城市博物馆免费开放。", "free": "yes", "e": "🏛", "mq": "museum", "wl": "", "wn": ""}, {"n": "当地城堡/教堂", "t": "历史古迹", "d": "英国几乎每个城市都有历史城堡或大教堂，值得探索。", "free": "no", "e": "🏰", "mq": "castle", "wl": "", "wn": ""}, {"n": "市区公园", "t": "自然风光", "d": "英国城市公园文化丰富，是本地生活的重要组成部分。", "free": "yes", "e": "🌿", "mq": "park", "wl": "", "wn": ""}, {"n": "周末市集", "t": "集市文化", "d": "英国市集传统悠久，有新鲜食材、手工品和二手书。", "free": "yes", "e": "🛍", "mq": "market", "wl": "", "wn": ""}, {"n": "当地步行道", "t": "户外活动", "d": "英国有大量有标记的步行路线，周末健行是本地人最爱。", "free": "yes", "e": "🥾", "mq": "walking trail", "wl": "", "wn": ""}], "trips": [{"d": "伦敦", "e": "🌆", "how": "火车约1-2.5小时", "why": "英国首都，无数免费博物馆，购物美食夜生活。", "hi": ["大英博物馆(免费)", "唐人街", "Borough Market", "南岸区漫步"], "sv": ["英国茶叶礼盒", "London文创", "博物馆文创", "精酿啤酒"], "tip": "提前1-2周买票最便宜", "tn": "Trainline订票", "tu": "https://www.thetrainline.com", "mq": "London city centre", "wu": "https://www.visitlondon.com", "wn": "伦敦旅游"}, {"d": "曼彻斯特", "e": "🎸", "how": "火车约1-2小时", "why": "英格兰北部最大城市，全英第二唐人街，中国超市密集，音乐文化。", "hi": ["曼彻斯特唐人街", "科学工业博物馆(免费)", "Northern Quarter", "Old Trafford参观"], "sv": ["曼联纪念品", "英国茶叶", "中国食材大采购", "精酿啤酒"], "tip": "唐人街有大量中国超市，是采购中国食材的好地方", "tn": "Trainline订票", "tu": "https://www.thetrainline.com", "mq": "Manchester city centre", "wu": "https://www.visitmanchester.com", "wn": "曼彻斯特旅游"}, {"d": "附近国家公园", "e": "🏞", "how": "公交或火车约30-90分钟", "why": "英国有15个国家公园，自然风光壮美，徒步登山首选。", "hi": ["徒步路线", "山顶风景", "野生动物观察", "湖泊划船"], "sv": ["本地蜂蜜", "手工陶瓷", "羊毛制品", "本地苹果酒"], "tip": "带防水登山鞋，英国天气多变", "tn": "查询公交时刻", "tu": "https://www.nationalrail.co.uk", "mq": "national park", "wu": "https://www.nationalparks.uk", "wn": "英国国家公园"}], "souvenirs": [{"n": "英国茶叶礼盒", "e": "🫖", "d": "Twinings/Yorkshire Tea"}, {"n": "本地蜂蜜", "e": "🍯", "d": "当地农场出产"}, {"n": "手工果酱", "e": "🍓", "d": "市集购买"}, {"n": "骨瓷茶具", "e": "🍵", "d": "英国传统礼品"}]}, "us_general": {"places": [{"n": "大学校园漫步", "t": "校园文化", "d": "美国顶尖大学校园本身就是景点，美丽建筑和活跃氛围。", "free": "yes", "e": "🎓", "mq": "university campus", "wl": "", "wn": ""}, {"n": "当地艺术博物馆", "t": "博物馆", "d": "美国主要城市的艺术博物馆通常对学生有大折扣或免费。", "free": "no", "e": "🎨", "mq": "art museum", "wl": "", "wn": ""}, {"n": "当地公园绿地", "t": "自然风光", "d": "美国城市公园面积大，适合跑步、野餐和户外活动。", "free": "yes", "e": "🌳", "mq": "city park", "wl": "", "wn": ""}, {"n": "Farmers Market", "t": "集市文化", "d": "每周末的农夫市场，新鲜有机食材和本地手工品。", "free": "yes", "e": "🥦", "mq": "farmers market", "wl": "", "wn": ""}, {"n": "当地历史街区", "t": "历史文化", "d": "美国城市都有保存完好的历史区域，了解当地历史。", "free": "yes", "e": "🏘", "mq": "historic district", "wl": "", "wn": ""}], "trips": [{"d": "最近大城市", "e": "🌆", "how": "火车/巴士约1-3小时", "why": "美国大城市有丰富的文化、美食和购物资源。", "hi": ["市区博物馆", "中国城", "著名景点", "购物街区"], "sv": ["美国品牌折扣商品", "当地特色食品", "纪念品", "当地啤酒"], "tip": "Greyhound/FlixBus提前买最便宜", "tn": "FlixBus订票", "tu": "https://www.flixbus.com", "mq": "city downtown", "wu": "", "wn": ""}, {"d": "国家公园", "e": "🏞", "how": "需要开车或参加一日游", "why": "美国有63个国家公园，自然风光全球最壮观，是留学必去体验。", "hi": ["徒步路线", "壮观自然景观", "野生动物观察", "露营体验"], "sv": ["公园纪念T恤", "当地蜂蜜", "手工艺品", "国家公园护照盖章"], "tip": "America the Beautiful年票$80，一年无限进入所有国家公园，性价比极高！", "tn": "查询门票", "tu": "https://www.nps.gov", "mq": "national park nearby", "wu": "https://www.nps.gov", "wn": "美国国家公园"}, {"d": "附近度假胜地", "e": "🏖", "how": "开车或参加一日游", "why": "美国地大物博，海滩、山脉、沙漠各种地貌近在咫尺。", "hi": ["海滩/山地活动", "当地特色餐厅", "观光游览", "户外冒险"], "sv": ["当地特色食品", "手工艺品", "磁贴纪念品", "当地葡萄酒"], "tip": "租车最方便，提前在Turo/Enterprise比价", "tn": "Amtrak查询", "tu": "https://www.amtrak.com", "mq": "tourist destination", "wu": "", "wn": ""}], "souvenirs": [{"n": "美国品牌折扣货", "e": "🛍", "d": "Outlet比国内便宜30-50%"}, {"n": "当地特色食品", "e": "🍫", "d": "各地有不同特产"}, {"n": "大学周边", "e": "🎓", "d": "校服、马克杯、帽子"}, {"n": "国家公园文创", "e": "🏞", "d": "护照本盖章必备"}]}, "au_general": {"places": [{"n": "当地海滩", "t": "自然风光", "d": "澳洲几乎每个城市都有世界级海滩，游泳冲浪晒太阳。", "free": "yes", "e": "🏖", "mq": "beach", "wl": "", "wn": ""}, {"n": "当地植物园", "t": "公园", "d": "澳洲各城市都有美丽的植物园，免费开放，适合放松。", "free": "yes", "e": "🌺", "mq": "botanical garden", "wl": "", "wn": ""}, {"n": "当地博物馆", "t": "博物馆", "d": "澳洲主要城市博物馆免费或低价，了解当地历史文化。", "free": "yes", "e": "🏛", "mq": "museum free", "wl": "", "wn": ""}, {"n": "当地市集", "t": "集市", "d": "周末市集是澳洲生活文化的重要部分，有农产品和手工品。", "free": "yes", "e": "🛍", "mq": "weekend market", "wl": "", "wn": ""}, {"n": "国家公园", "t": "自然风光", "d": "澳洲国家公园面积惊人，有袋鼠、考拉等独特野生动物。", "free": "no", "e": "🦘", "mq": "national park", "wl": "", "wn": ""}], "trips": [{"d": "最近自然保护区", "e": "🌿", "how": "公交或开车约1-2小时", "why": "澳洲自然风光壮美，有全球独一无二的野生动物和地质奇观。", "hi": ["野生动物观察", "徒步路线", "自然风光", "丛林露营"], "sv": ["澳洲羊毛产品", "考拉/袋鼠纪念品", "澳洲坚果", "本地葡萄酒"], "tip": "下载Wildlife Spotter App，更容易找到野生动物", "tn": "Jetstar查询", "tu": "https://www.jetstar.com", "mq": "nature reserve", "wu": "https://www.australia.com", "wn": "澳洲旅游官网"}, {"d": "最近大城市", "e": "🌆", "how": "飞机约1-2小时或火车", "why": "澳洲各大城市各有特色，墨尔本咖啡文化、悉尼海港、布里斯班阳光、珀斯孤独之美。", "hi": ["城市地标", "美食体验", "购物街区", "华人区采购"], "sv": ["澳洲坚果", "Tim Tam饼干", "澳洲葡萄酒", "本地设计师作品"], "tip": "Jetstar和TigerAir国内航班，提前2-3周买最便宜", "tn": "Jetstar订票", "tu": "https://www.jetstar.com", "mq": "city downtown", "wu": "https://www.australia.com", "wn": "澳洲旅游"}, {"d": "葡萄酒产区", "e": "🍷", "how": "开车约1-2小时", "why": "澳洲几乎每个城市都有附近的葡萄酒产区，是留学生周末最爱活动之一。", "hi": ["酒庄品酒", "乡村风光", "当地美食", "橄榄油和奶酪"], "sv": ["澳洲葡萄酒", "橄榄油", "当地奶酪", "手工果酱"], "tip": "多人合租一辆车是最经济的方式", "tn": "Jetstar查询", "tu": "https://www.jetstar.com", "mq": "wine region", "wu": "https://www.wineaustralia.com", "wn": "澳洲葡萄酒官网"}], "souvenirs": [{"n": "澳洲坚果礼盒", "e": "🌰", "d": "Macadamia澳洲特产"}, {"n": "Tim Tam饼干", "e": "🍫", "d": "澳洲国民饼干"}, {"n": "澳洲葡萄酒", "e": "🍷", "d": "各产区特色"}, {"n": "考拉/袋鼠纪念品", "e": "🦘", "d": "正版授权毛绒玩具"}]}, "ca_general": {"places": [{"n": "当地市政公园", "t": "公园", "d": "加拿大城市公园面积大，四季皆有不同景色，冬天可滑冰。", "free": "yes", "e": "🍁", "mq": "city park", "wl": "", "wn": ""}, {"n": "当地历史博物馆", "t": "博物馆", "d": "加拿大各城市博物馆馆藏丰富，了解当地历史和原住民文化。", "free": "no", "e": "🏛", "mq": "museum", "wl": "", "wn": ""}, {"n": "当地海滨/湖滨", "t": "自然风光", "d": "加拿大湖泊众多，夏季游泳野餐，冬季冰钓冰壶。", "free": "yes", "e": "🌊", "mq": "waterfront", "wl": "", "wn": ""}, {"n": "唐人街", "t": "文化美食", "d": "加拿大主要城市都有大型唐人街，是华人留学生的重要社区中心。", "free": "yes", "e": "🏮", "mq": "Chinatown", "wl": "", "wn": ""}, {"n": "当地滑雪场", "t": "冬季运动", "d": "加拿大冬季极寒但滑雪资源丰富，学生票价有优惠。", "free": "no", "e": "⛷", "mq": "ski resort nearby", "wl": "", "wn": ""}], "trips": [{"d": "国家公园", "e": "🏔", "how": "开车约1-3小时", "why": "加拿大国家公园是全球最壮观的自然风光之一，落基山脉、班夫必去。", "hi": ["Banff/Jasper落基山", "Lake Louise湖泊", "冰川观光", "野生动物：麋鹿、熊"], "sv": ["枫糖浆礼盒", "枫叶纪念品", "羊毛毯", "公园文创"], "tip": "购买Canada Discovery Pass年票，一年无限进入所有国家公园", "tn": "VIA Rail查询", "tu": "https://www.viarail.ca", "mq": "national park Canada", "wu": "https://www.pc.gc.ca", "wn": "Parks Canada"}, {"d": "最近大城市", "e": "🌆", "how": "火车/巴士约1-2小时", "why": "加拿大各大城市风格各异，多伦多国际化、温哥华自然、蒙特利尔法语文化、渥太华政治首都。", "hi": ["城市地标", "唐人街采购", "T&T中国超市", "城市博物馆"], "sv": ["枫糖浆", "冰酒", "因纽特艺术品", "本地精酿啤酒"], "tip": "FlixBus加拿大城际性价比最高", "tn": "FlixBus订票", "tu": "https://www.flixbus.ca", "mq": "city downtown Canada", "wu": "https://www.destinationcanada.com", "wn": "加拿大旅游"}, {"d": "滑雪/冬季活动", "e": "⛷", "how": "开车约1-3小时（冬季必备体验）", "why": "加拿大冬季漫长，与其抱怨严寒不如拥抱冬天，滑雪、冰壶、极光观赏。", "hi": ["滑雪初学者课程", "冰壶体验", "极光观赏（北部城市）", "冰雪节"], "sv": ["滑雪装备折扣", "当地手工艺品", "枫糖浆", "冰酒"], "tip": "学生票通常有50%折扣，关注各滑雪场学生优惠", "tn": "查询滑雪场", "tu": "https://www.snow-forecast.com", "mq": "ski resort", "wu": "https://www.skicanada.org", "wn": "加拿大滑雪"}], "souvenirs": [{"n": "枫糖浆礼盒", "e": "🍁", "d": "加拿大国宝特产"}, {"n": "冰酒（Ice Wine）", "e": "🍷", "d": "加拿大独特甜酒"}, {"n": "因纽特艺术品", "e": "🗿", "d": "原住民手工艺"}, {"n": "本地精酿啤酒", "e": "🍺", "d": "各省各有特色"}]}};
+
+let P=null, CS={}, CH=[];
+const mu=q=>'https://www.google.com/maps/search/'+encodeURIComponent(q);
+const EI=`<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M9.5 2.5H3.5M9.5 2.5v6"/></svg>`;
+const R=(l,v)=>`<div class="row"><span class="rl">${l}</span><span class="rv">${v}</span></div>`;
+
+function getCC(uni){return uni.cc||'uk';}
+
+function getExploreTemplate(uni){
+  const cc=getCC(uni);
+  const city=(uni.cityEn||'').toLowerCase();
+  if(cc==='uk'&&(city.includes('london')))return ET.uk_london;
+  if(cc==='uk')return ET.uk_general;
+  if(cc==='us')return ET.us_general;
+  if(cc==='au')return ET.au_general;
+  return ET.ca_general;
+}
+
+// Search
+function norm(v){return (v||'').toString().trim().toLowerCase();}
+function unique(arr){return [...new Set(arr.filter(Boolean))];}
+function getTerms(id, uni){
+  return unique([
+    id,
+    uni.zh,
+    uni.en,
+    uni.city,
+    uni.cityEn,
+    uni.cityZh,
+    ...(KW[id]||[])
+  ].map(norm));
+}
+function scoreUniMatch(q, id, uni){
+  const nq=norm(q);
+  if(!nq) return -1;
+  const terms=getTerms(id, uni);
+  if(terms.includes(nq)) return 100;
+
+  const primary=[norm(uni.zh), norm(uni.en), norm(uni.city), norm(uni.cityEn), norm(uni.cityZh)].filter(Boolean);
+  if(primary.some(t=>t.startsWith(nq)) && nq.length>=2) return 90;
+
+  const aliases=(KW[id]||[]).map(norm).filter(Boolean);
+  const longAliases=aliases.filter(t=>t.length>=3);
+  if(longAliases.some(t=>t.startsWith(nq)) && nq.length>=2) return 80;
+
+  const longTerms=terms.filter(t=>t.length>=4);
+  if(nq.length>=3 && (primary.some(t=>t.includes(nq)) || longTerms.some(t=>t.includes(nq)))) return 70;
+
+  return -1;
+}
+function findUniversities(q, limit=6){
+  const nq=norm(q);
+  if(!nq) return [];
+  return Object.entries(DB)
+    .map(([id, uni], idx)=>({uni, idx, score:scoreUniMatch(nq, id, uni)}))
+    .filter(x=>x.score>=0)
+    .sort((a,b)=>b.score-a.score || a.idx-b.idx)
+    .slice(0, limit)
+    .map(x=>x.uni);
+}
+function onInp(){
+  const q=document.getElementById('si').value.trim();
+  document.getElementById('err').style.display='none';
+  const sb=document.getElementById('sb');
+  if(!q){sb.style.display='none';return;}
+  const hits=findUniversities(q,6);
+  if(!hits.length){sb.style.display='none';return;}
+  sb.innerHTML=hits.map(d=>`<div class="si" onclick="loadUni(${JSON.stringify(d.zh||d.en)})"><span>${d.flag}</span>${d.zh||d.en}<span class="si-meta">${d.cityZh||d.city} · ${d.country}</span></div>`).join('');
+  sb.style.display='block';
+}
+function onKey(e){if(e.key==='Enter')doSearch();if(e.key==='Escape')document.getElementById('sb').style.display='none';}
+function qs(v){
+  document.getElementById('si').value=v;
+  document.getElementById('sb').style.display='none';
+  document.getElementById('err').style.display='none';
+  loadUni(v);
+}
+function doSearch(){
+  document.getElementById('sb').style.display='none';
+  const q=document.getElementById('si').value.trim();
+  if(!q)return;
+  loadUni(q);
+}
+
+function loadUni(q){
+  const found=findUniversities(q,1)[0]||null;
+  if(!found){document.getElementById('err').style.display='block';return;}
+  P=found; CS={}; CH=[];
+  document.getElementById('landing').style.display='none';
+  document.getElementById('guide').style.display='block';
+  document.getElementById('hflag').textContent=P.flag;
+  document.getElementById('huni').textContent=(P.zh||P.en)+' · '+(P.en||P.zh);
+  document.getElementById('hcity').textContent=(P.country||'')+' · '+(P.cityZh||P.city||'');
+  document.getElementById('hintro').textContent=P.intro||'';
+  renderAll();
+  window.scrollTo(0,0);
+}
+
+function renderAll(){rT();rS();rR();rB();rE();rCL();rAI();st('t',document.querySelector('.tab'));
+  // Add contextual articles
+  const cc=P.cc||'uk';
+  const artMap={
+    'uk':[
+      {t:'英国硕士申请全流程',u:'https://zhuanlan.zhihu.com/p/646843677',tag:'申请攻略'},
+      {t:'英国租房血泪避坑',u:'https://zhuanlan.zhihu.com/p/35845960',tag:'租房必读'},
+      {t:'英国生活注意事项',u:'https://zhuanlan.zhihu.com/p/653393118',tag:'生活指南'},
+      {t:'2024英国留学终极指南',u:'https://zhuanlan.zhihu.com/p/680145157',tag:'综合攻略'},
+    ],
+    'us':[
+      {t:'美国留学全攻略',u:'https://zhuanlan.zhihu.com/p/2014366843914192445',tag:'申请攻略'},
+      {t:'美国租房注意事项',u:'https://www.zhihu.com/question/622015460',tag:'租房指南'},
+    ],
+    'au':[
+      {t:'澳洲留学申请资源大全',u:'https://zhuanlan.zhihu.com/p/2014366843914192445',tag:'申请攻略'},
+      {t:'澳洲留学生活指南',u:'https://studyinaustralia.gov.au',tag:'官方指南'},
+    ],
+    'ca':[
+      {t:'加拿大留学全攻略',u:'https://zhuanlan.zhihu.com/p/2014366843914192445',tag:'申请攻略'},
+      {t:'加拿大留学生活指南',u:'https://www.universitystudy.ca',tag:'官方资源'},
+    ],
+  };
+  const arts=artMap[cc]||artMap['uk'];
+  const el=document.getElementById('h-articles');
+  if(el)el.innerHTML=arts.map(a=>`<a href="${a.u}" target="_blank" style="background:rgba(165,180,252,.15);border:1px solid rgba(165,180,252,.25);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.75);text-decoration:none;white-space:nowrap;transition:.15s" onmouseover="this.style.background='rgba(165,180,252,.25)'" onmouseout="this.style.background='rgba(165,180,252,.15)'">${a.tag}: ${a.t}</a>`).join('');
+}
+
+function rT(){
+  const cc=getCC(P);
+  const ci=CI[cc]||CI.uk;
+  const ti=P.transport_info||'';
+  let h=`<div class="sec-h">🚌 ${P.cityZh||P.city} · 交通出行指南</div>`;
+  h+=`<div class="card"><div class="lede">${ti}</div></div>`;
+  h+=`<div class="card"><div class="card-title">🚆 长途出行 · 购票直达</div><div class="lrow">`;
+  ci.ticket_links.forEach(l=>{h+=`<a href="${l.url}" target="_blank" class="btn ${l.cls}">${l.name} ${EI}</a>`;});
+  h+=`</div>`;
+  if(ci.bus_links&&ci.bus_links.length){
+    h+=`<div style="margin-top:9px;font-size:12px;color:var(--ink3)">长途巴士：`;
+    ci.bus_links.forEach(b=>{h+=`<a href="${b.url}" target="_blank" style="color:#1d4ed8;margin-right:8px">${b.name}</a>`;});
+    h+=`</div>`;
+  }
+  h+=`</div>`;
+  if(ci.railcard)h+=`<div class="tip-box">${ci.railcard.text} → <a href="${ci.railcard.url}" target="_blank">立即购买</a></div>`;
+  h+=`<div class="card" style="margin-top:12px"><div class="card-title" style="margin-bottom:10px">📱 实用工具 & App</div><div class="rows">`;
+  if(cc==='uk'){h+=R('导航App','<a href="https://www.citymapper.com" target="_blank">Citymapper</a>（最强公交导航）· Google Maps');h+=R('火车查询','<a href="https://www.nationalrail.co.uk" target="_blank">National Rail</a> · Trainline App');}
+  else if(cc==='us'){h+=R('导航App','Google Maps · Transit App（公交专用）');h+=R('打车',`<a href="https://www.uber.com" target="_blank">Uber</a> · <a href="https://www.lyft.com" target="_blank">Lyft</a>`);}
+  else if(cc==='au'){h+=R('导航App','Google Maps · 各州官方公交App（Opal/Myki等）');h+=R('廉价航空',`<a href="https://www.jetstar.com" target="_blank">Jetstar</a> · <a href="https://www.virginaustralia.com" target="_blank">Virgin Australia</a>`);}
+  else{h+=R('导航App','Google Maps · Transit App');h+=R('长途巴士',`<a href="https://www.flixbus.ca" target="_blank">FlixBus</a> · <a href="https://www.viarail.ca" target="_blank">VIA Rail</a>`);}
+  h+=`</div></div>`;
+  h+=`<div class="lrow"><a href="${mu((P.cityEn||P.city)+' public transport')}" target="_blank" class="btn btn-outline">📍 查看当地交通地图 ${EI}</a></div>`;
+  document.getElementById('p-t').innerHTML=h;
+}
+
+function rS(){
+  const si=P.supermarket_info||'';
+  let h=`<div class="sec-h">🛒 ${P.cityZh||P.city} · 超市购物指南</div>`;
+  h+=`<div class="card"><div class="lede">${si}</div></div>`;
+  h+=`<div class="card"><div class="rows">`;
+  h+=R('交通提示','建议每周集中采购一次，平时校内便利店应急');
+  h+=R('网购配送',P.cc==='uk'?'<a href="https://www.tesco.com" target="_blank">Tesco</a> · <a href="https://www.sainsburys.co.uk" target="_blank">Sainsbury&#39;s</a> 可配送到家':P.cc==='au'?'<a href="https://www.woolworths.com.au" target="_blank">Woolworths</a> · <a href="https://www.coles.com.au" target="_blank">Coles</a> 可配送':'当地主流超市均提供网购配送');
+  h+=`</div></div>`;
+  h+=`<div class="lrow">`;
+  h+=`<a href="${mu('supermarket near '+(P.cityEn||P.city))}" target="_blank" class="btn btn-outline">📍 搜附近超市 ${EI}</a>`;
+  h+=`<a href="${mu('asian supermarket '+(P.cityEn||P.city))}" target="_blank" class="btn btn-outline">🥢 搜亚洲超市 ${EI}</a>`;
+  h+=`<a href="${mu('chinese supermarket '+(P.cityEn||P.city))}" target="_blank" class="btn btn-outline">🇨🇳 搜中国超市 ${EI}</a>`;
+  h+=`</div>`;
+  document.getElementById('p-s').innerHTML=h;
+}
+
+function rR(){
+  const cc=getCC(P);
+  const ci=CI[cc]||CI.uk;
+  const ri=P.rent_price||'';
+  const ai=P.area_info||'';
+  let h=`<div class="sec-h">🏠 ${P.cityZh||P.city} · 租房完整指南</div>`;
+  h+=`<div class="card"><div class="rows">`;
+  h+=R('月租参考',`<strong>${ri}</strong>`);
+  h+=R('推荐区域',ai);
+  h+=`</div></div>`;
+  h+=`<div class="card"><div class="card-title" style="margin-bottom:10px">🔗 主要租房平台</div><div class="plat-grid">`;
+  ci.platforms.forEach(p=>{h+=`<div class="plat-card"><a href="${p.url}" target="_blank">${p.name}</a><p>${p.desc}</p></div>`;});
+  h+=`</div></div>`;
+  if(ci.rent_rules&&ci.rent_rules.length){
+    h+=`<div class="card"><div class="card-title" style="margin-bottom:10px">⚖️ 租房法规须知</div><div class="rows">`;
+    ci.rent_rules.forEach(([l,v])=>{h+=R(l,v);});
+    h+=`</div></div>`;
+  }
+  h+=`<div class="lrow">`;
+  h+=`<a href="${mu('student accommodation '+(P.cityEn||P.city))}" target="_blank" class="btn btn-outline">📍 Google Maps查看学生区 ${EI}</a>`;
+  if(cc==='uk')h+=`<a href="https://www.citizensadvice.org.uk/housing/renting-privately/" target="_blank" class="btn btn-outline">法律咨询 ${EI}</a>`;
+  h+=`</div>`;
+  document.getElementById('p-r').innerHTML=h;
+}
+
+function rB(){
+  const cc=getCC(P);
+  const ci=CI[cc]||CI.uk;
+  let h=`<div class="sec-h">🏦 ${P.country} · 银行开户指南</div>`;
+  h+=`<div class="card">`;
+  ci.bank_main.forEach(bk=>{
+    h+=`<div class="bank-item"><div class="bank-info"><div class="bank-name"><a href="${bk.url}" target="_blank">${bk.name}</a>`;
+    if(bk.tag)h+=`<span class="badge badge-blue">${bk.tag}</span>`;
+    h+=`</div><div class="bank-desc">${bk.desc}</div></div>`;
+    h+=`<a href="${bk.url}" target="_blank" class="btn btn-outline" style="font-size:11px;flex-shrink:0">开户 ${EI}</a></div>`;
+  });
+  h+=`</div>`;
+  h+=`<div class="card"><div class="rows">`;
+  h+=R('所需材料',ci.bank_mat);
+  h+=R('国际汇款',ci.bank_remit+' <a href="https://wise.com" target="_blank">Wise官网</a>');
+  h+=R('工作证件',ci.bank_ni+(ci.bank_ni_link?` <a href="${ci.bank_ni_link}" target="_blank">在线申请</a>`:''));
+  h+=R('税务打工',ci.bank_tax);
+  h+=`</div></div>`;
+  document.getElementById('p-b').innerHTML=h;
+}
+
+function rE(){
+  const t=getExploreTemplate(P);
+  const ei=P.explore_info||'';
+  const di=P.daytrip_info||'';
+  let h=`<div class="sec-h">🗺 周边探索 · 景点攻略 & 一日游</div>`;
+  h+=`<div class="exhero"><div class="exhero-em">${t.places[0]?.e||'🗺'}</div><div class="exhero-text"><h3>${P.cityZh||P.city}</h3><p>${ei}</p></div></div>`;
+  h+=`<div class="sec-label">📸 城市景点</div><div class="places-grid">`;
+  const GRADS=['linear-gradient(135deg,#dbeafe,#bfdbfe)','linear-gradient(135deg,#d1fae5,#a7f3d0)','linear-gradient(135deg,#fef3c7,#fde68a)','linear-gradient(135deg,#fce7f3,#fbcfe8)','linear-gradient(135deg,#ede9fe,#ddd6fe)','linear-gradient(135deg,#e0f2fe,#bae6fd)'];
+  (t.places||[]).forEach((pl,i)=>{
+    const mq=(pl.mq||pl.n)+' '+(P.cityEn||P.city);
+    h+=`<div class="pcard"><div class="pcard-img" style="background:${GRADS[i%GRADS.length]}">${pl.e||'🏛'}</div>`;
+    h+=`<div class="pcard-body"><div class="pcard-name">${pl.n}<span class="${pl.free==='yes'?'fbadge':'pbadge'}">${pl.free==='yes'?'免费':pl.price||'需购票'}</span></div>`;
+    h+=`<div class="pcard-type">${pl.t}</div><div class="pcard-desc">${pl.d}</div>`;
+    h+=`<div class="pcard-links"><a href="${mu(mq)}" target="_blank" class="plink pl-map">📍 地图</a>`;
+    if(pl.wl)h+=`<a href="${pl.wl}" target="_blank" class="plink pl-web">🌐 ${pl.wn||'官网'}</a>`;
+    h+=`</div></div></div>`;
+  });
+  h+=`</div>`;
+  h+=`<div class="sec-label">🚆 一日游攻略（含购票链接）</div>`;
+  (t.trips||[]).forEach((tr,i)=>{
+    const dest=tr.d||tr.dest;
+    h+=`<div class="dtcard"><div class="dtnum">${i+1}</div><div>`;
+    h+=`<div class="dt-dest">${tr.e||''} ${dest}</div>`;
+    h+=`<div class="dt-how">🚆 ${tr.how} · ${tr.cost||''}</div>`;
+    h+=`<div class="dt-why">${tr.why}</div>`;
+    if(tr.hi?.length)h+=`<div class="dt-tags">${tr.hi.map(x=>`<span class="dt-tag">✦ ${x}</span>`).join('')}</div>`;
+    if(tr.sv?.length){h+=`<div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px">🎁 推荐伴手礼</div>`;h+=`<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px">${tr.sv.map(s=>`<span style="background:#fef9ec;border:1px solid #fde68a;border-radius:5px;font-size:11px;padding:3px 7px;color:#92400e">🛍 ${s}</span>`).join('')}</div>`;}
+    if(tr.tip)h+=`<div class="warn-box" style="margin-bottom:9px">💡 ${tr.tip}</div>`;
+    h+=`<div class="dt-links">`;
+    if(tr.tu)h+=`<a href="${tr.tu}" target="_blank" class="btn btn-primary">${tr.tn||'购票'} ${EI}</a>`;
+    h+=`<a href="${mu((tr.mq||dest)+' '+(P.cityEn||P.city))}" target="_blank" class="btn btn-outline">📍 地图</a>`;
+    if(tr.wu)h+=`<a href="${tr.wu}" target="_blank" class="btn btn-outline">${tr.wn||'官网'} ${EI}</a>`;
+    h+=`</div></div></div>`;
+  });
+  if(t.souvenirs?.length){
+    h+=`<div class="sec-label">🎁 当地伴手礼推荐</div><div class="souv-grid">`;
+    t.souvenirs.forEach(s=>{h+=`<div class="souv-card"><div class="souv-em">${s.e}</div><div class="souv-n">${s.n}</div><div class="souv-d">${s.d}</div></div>`;});
+    h+=`</div>`;
+  }
+  document.getElementById('p-e').innerHTML=h;
+}
+
+function rCL(){
+  const cc=getCC(P);
+  const ci=CI[cc]||CI.uk;
+  if(!CS.m)CS.m={};
+  const before=['护照和签证证件提前确认','换当地货币现金约等值500美元','提前开立当地银行账户（如可网上办理）','下载当地公交导航App','研究租房区域，提前联系房源','准备材料：录取信、成绩单、存款证明、健康证明'];
+  const week1=['到达后领取相关证件（BRP/Student Pass等）','注册本地医疗服务（GP/Campus Health）','激活或开立银行账户','购买当地公交卡/学生证','向学校注册，领取学生证'];
+  const month1=[...(ci.checklist_country||[]),'加入学校CSSA中国学生学者联合会','注册学生折扣平台（UniDays/Student Beans等）','探索周边景点和一日游目的地'];
+  const all=[...before,...week1,...month1];
+  let done=0;all.forEach((_,i)=>{if(CS.m[i])done++;});
+  const pct=all.length?Math.round(done/all.length*100):0;
+  let h=`<div class="sec-h">✅ 出发准备清单</div>`;
+  h+=`<div class="card"><div class="cl-head"><span>${P.zh||P.en} · 出发清单</span><span>${done}/${all.length} 已完成</span></div>`;
+  h+=`<div class="cl-bar-o"><div class="cl-bar-i" style="width:${pct}%"></div></div>`;
+  let off=0;
+  [['🧳 出发前（国内准备）',before],['📅 到达首周',week1],['📆 第一个月',month1]].forEach(([lbl,items])=>{
+    h+=`<div class="cl-phase-h">${lbl}</div>`;
+    items.forEach((t,i)=>{
+      const id=off+i,chk=CS.m[id]?'checked':'',cls=CS.m[id]?'cli done':'cli';
+      h+=`<div class="${cls}" onclick="tCL(${id})"><input type="checkbox" ${chk} onclick="event.stopPropagation();tCL(${id})" /><label>${t}</label></div>`;
+    });
+    off+=items.length;
+  });
+  h+=`</div>`;
+  document.getElementById('p-cl').innerHTML=h;
+}
+function tCL(id){if(!CS.m)CS.m={};CS.m[id]=!CS.m[id];rCL();}
+
+function rAI(){
+  const qq=P.qq||[];
+  const qqH=qq.map(q=>`<span class="qq" onclick="askAI('${q.replace(/'/g,"\'")}'">${q}</span>`).join('');
+  document.getElementById('p-ai').innerHTML=`
+    <div class="sec-h">💬 AI 智能问答</div>
+    <div class="card">
+      <div class="qq-row">${qqH}</div>
+      <div class="chatbox" id="cb"><div class="ma"><span>你好！我了解 ${P.cityZh||P.city} 的情况，有关于当地交通、租房、超市、景点的问题请直接问我。</span></div></div>
+      <div class="ai-row"><input id="ai-inp" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendAI()" /><button class="ai-send" id="ai-send" onclick="sendAI()">发送</button></div>
+      <div class="ai-info">⚠️ AI问答功能需要网络连接Anthropic API，如无法使用请查看上方各标签页的详细信息。</div>
+    </div>`;
+}
+function askAI(q){const i=document.getElementById('ai-inp');if(!i)return;i.value=q;sendAI();}
+async function sendAI(){
+  const inp=document.getElementById('ai-inp'),btn=document.getElementById('ai-send');
+  if(!inp||!btn)return;
+  const q=inp.value.trim();if(!q)return;
+  inp.value='';btn.disabled=true;
+  addMsg('user',q);
+  const t=addMsg('ai','<span class="thinking">思考中…</span>');
+  CH.push({role:'user',content:q});
+  const MODELS=['claude-sonnet-4-5','claude-sonnet-4-20250514','claude-3-5-sonnet-20241022','claude-3-5-haiku-20241022'];
+  let replied=false;
+  for(const model of MODELS){
+    try{
+      const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model,max_tokens:600,system:`你是留学生生活助手。用户就读于${P.zh||P.en}，位于${P.cityZh||P.city}，${P.country}。用简洁中文回答，200字以内。`,messages:CH.slice(-6)})});
+      const d=await r.json();
+      if(d.content?.[0]?.text){
+        const rep=d.content[0].text;
+        CH.push({role:'assistant',content:rep});
+        t.querySelector('span').innerHTML=rep.replace(/\n/g,'<br>');
+        replied=true;break;
+      }
+    }catch(e){continue;}
+  }
+  if(!replied)t.querySelector('span').innerHTML='AI问答暂时不可用，请查看页面其他标签页的详细信息。';
+  btn.disabled=false;
+}
+function addMsg(role,html){
+  const box=document.getElementById('cb');if(!box)return{querySelector:()=>({})  };
+  const div=document.createElement('div');div.className=role==='user'?'mu':'ma';
+  div.innerHTML=`<span>${html}</span>`;box.appendChild(div);box.scrollTop=box.scrollHeight;return div;
+}
+function st(name,el){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  if(el)el.classList.add('on');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('p-'+name).classList.add('on');
+}
+function goBack(){
+  P=null;CS={};CH=[];
+  document.getElementById('guide').style.display='none';
+  document.getElementById('landing').style.display='flex';
+  document.getElementById('si').value='';
+  document.getElementById('err').style.display='none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
